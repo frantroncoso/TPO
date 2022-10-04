@@ -22,13 +22,13 @@ npm install
 _Para correr de forma local(http://localhost:3000/)_
 
 ```
-npm run dev
+npm start
 ```
 
 ## Despliegue 📦
 
 ```
-npm run build
+npm build
 ```
 
 #### Tecnologias involucradas 👨‍💻
