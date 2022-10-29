@@ -66,7 +66,7 @@ export default function Search() {
 
     ];
 
-    const [resultsList, setresultsList] = useState([{ results: "" }]);
+    const [resultsList, setresultsList] = useState([]);
 
     /* const handleIngredientChange = (e, index) => {
       const { name, value } = e.target;
