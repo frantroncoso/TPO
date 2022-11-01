@@ -7,7 +7,8 @@ import Login from "./pages/login/Login";
 import Nav from "./components/nav/Nav";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/footer/Footer";
-import Search from "./pages/search/Search";
+import Search from "./pages/search/search";
+import Profile from "./pages/profile/profile";
 
 const theme = createTheme();
 
@@ -30,6 +31,7 @@ export default function App() {
             <Route exact path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Router>
         <Footer />
