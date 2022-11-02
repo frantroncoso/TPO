@@ -103,7 +103,7 @@ export default function Search() {
           width="450px"
           height="782px"
           sx={{
-            backgroundColor: "#F5DEB3",
+            backgroundColor: "#f7fad2",
           }}
         >
           <Box
@@ -151,7 +151,7 @@ export default function Search() {
               required
               fullWidth
               renderInput={(params) => (
-                <TextField {...params} label="Seleccione su Deporte" />
+                <TextField {...params} label="Seleccione su Zona de dolor" />
               )}
             />
           </Box>
@@ -207,8 +207,6 @@ export default function Search() {
               Buscar Especialista
             </Button>
           </Box>
-
-          <h5> NO es necesario utilizar todas las opciones </h5>
         </Grid>
 
         <Grid
@@ -216,7 +214,7 @@ export default function Search() {
           width="1133px"
           height="782px"
           sx={{
-            backgroundColor: "#00aae4",
+            backgroundColor: "#d8e8e8",
             overflow: "scroll",
           }}
         >
@@ -232,7 +230,7 @@ export default function Search() {
                   key={index}
                   sx={{
                     width: 1116,
-                    backgroundColor: "#F5DEB3",
+                    backgroundColor: "#a8d0da",
                     border: " 2px solid #ffff",
                   }}
                   onClick={handleCardEvent}

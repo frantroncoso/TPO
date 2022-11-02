@@ -85,6 +85,9 @@ export default function Login() {
               control={<Checkbox value="remember" color="primary" />}
               label="Recordame"
             />
+            <Link href="profile" variant="button">
+              Iniciar sesión
+            </Link>
             <Button
               type="submit"
               fullWidth

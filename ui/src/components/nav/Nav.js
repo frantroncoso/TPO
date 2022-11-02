@@ -75,7 +75,7 @@ export default function Nav() {
             href="/professionals"
             sx={{ my: 1, mx: 1.5 }}
           >
-            Profecionales
+            Profesionales
           </Link>
           <Link
             variant="button"

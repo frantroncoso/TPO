@@ -1,12 +1,12 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import { AccountCircle, Edit } from "@mui/icons-material";
+import { Edit } from "@mui/icons-material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Journal from "./journal";
@@ -61,7 +61,7 @@ export default function Profile() {
                 <Skeleton />
               ) : (
                 <Typography variant="subtitle1" color="inherit" paragraph>
-                  Fecha de nacimiento: {user.dob.date}
+                  Fecha de nacimiento: {"19/11/1995"}
                 </Typography>
               )}
             </Grid>
@@ -70,7 +70,7 @@ export default function Profile() {
                 <Skeleton />
               ) : (
                 <Typography variant="subtitle1" color="inherit" paragraph>
-                  DNI: {user.id.value}
+                  DNI: {"38991915"}
                 </Typography>
               )}
             </Grid>
@@ -118,12 +118,14 @@ export default function Profile() {
           <Tab label="Proximos Turnos" {...SetupIndex(1)} />
         </Tabs>
       </Paper>
-      <TabPanel value={value} index={0}>
-        <Journal />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Turns />
-      </TabPanel>
+      <Box sx={{ m: 5 }}>
+        <TabPanel value={value} index={0}>
+          <Journal />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Turns />
+        </TabPanel>
+      </Box>
     </div>
   );
 }
