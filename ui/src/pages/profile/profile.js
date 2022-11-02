@@ -1,12 +1,13 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import Skeleton from "@mui/material/Skeleton";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import { AccountCircle, Edit } from "@mui/icons-material";
-import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Journal from "./journal";
@@ -55,25 +56,24 @@ export default function Profile() {
     height: 182,
   };
 
-  const [user, setUser] = useState(mockUser);
+  const [user, setUser] = useState(null);
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    setUser(mockUser);
+  });
+
   return (
     <div>
       <Paper
         sx={{
           position: "relative",
-          backgroundColor: "grey.300",
+          backgroundColor: "grey.200",
           color: "#fff",
-          mb: 4,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          // backgroundImage: `url(${})`,
         }}
       >
         <Box
@@ -86,28 +86,23 @@ export default function Profile() {
             backgroundColor: "rgba(0,0,0,.3)",
           }}
         />
-        <Grid container>
-          <Grid item md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                p: { xs: 3, md: 6 },
-                pr: { md: 0 },
-              }}
-            >
-              <Avatar sx={{ m: 1, bgcolor: "grey.800" }}>
-                <AccountCircle />
-              </Avatar>
-            </Box>
+        <Grid
+          container
+          sx={{
+            position: "relative",
+            p: { xs: 1, md: 3 },
+            pr: { md: 0 },
+          }}
+        >
+          <Grid item md={1}>
+            <Avatar sx={{ m: 1, bgcolor: "grey.800" }}>
+              <AccountCircle />
+            </Avatar>
           </Grid>
-          <Grid item md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                p: { xs: 3, md: 6 },
-                pr: { md: 0 },
-              }}
-            >
+          <Grid item md={5}>
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography
                 component="h1"
                 variant="h5"
@@ -116,22 +111,26 @@ export default function Profile() {
               >
                 Nombre: {user.name}
               </Typography>
+            )}
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography variant="h5" color="inherit" paragraph>
                 Fecha de nacimiento: {user.birthday}
               </Typography>
+            )}
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography variant="h5" color="inherit" paragraph>
                 DNI: {user.dni}
               </Typography>
-            </Box>
+            )}
           </Grid>
-          <Grid item md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                p: { xs: 3, md: 6 },
-                pr: { md: 0 },
-              }}
-            >
+          <Grid item md={5}>
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography
                 component="h1"
                 variant="h5"
@@ -140,24 +139,24 @@ export default function Profile() {
               >
                 Deporte: {user.sport}
               </Typography>
+            )}
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography variant="h5" color="inherit" paragraph>
                 Peso: {user.wight} kg.
               </Typography>
+            )}
+            {!user ? (
+              <Skeleton />
+            ) : (
               <Typography variant="h5" color="inherit" paragraph>
                 Altura: {user.height} cm.
               </Typography>
-            </Box>
+            )}
           </Grid>
-          <Grid item md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                p: { xs: 3, md: 6 },
-                pr: { md: 0 },
-              }}
-            >
-              <Edit />
-            </Box>
+          <Grid item md={1}>
+            <Edit />
           </Grid>
         </Grid>
         <Tabs
