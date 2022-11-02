@@ -1,13 +1,17 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Stack from "@mui/material/Stack";
 import { useState } from "react";
-import { Button } from "@mui/material";
+import {
+  Button,
+  Stack,
+  CardContent,
+  Card,
+  Grid,
+  Typography,
+} from "@mui/material";
+import { TabPanel, SetupIndex } from "../../components/tabPanel/TabPanel";
 
 export default function Journal() {
+  const [value, setValue] = useState(0);
   const [resultsList, setresultsList] = useState([
     {
       tratamiento: "Traumatología - Zona Hombros",
@@ -31,52 +35,94 @@ export default function Journal() {
   };
 
   return (
-    <Grid
-      item
-      width="100%"
-      height="100%"
-      sx={{
-        backgroundColor: "#00aae4",
-      }}
-    >
-      <Grid container component="main" sx={{ height: "100%", width: "100%" }}>
-        {resultsList.map((singleResult, index) => (
-          <Grid item>
-            <Card
-              key={index}
-              sx={{
-                width: 1550,
-                backgroundColor: "#F5DEB3",
-                border: " 2px solid #ffff",
-              }}
-              onClick={handleCardEvent}
-            >
-              <CardContent>
-                <Stack
-                  direction="row"
-                  spacing={5}
-                  justifyContent="space-between"
+    <div>
+      <TabPanel value={value} index={0}>
+        <Grid
+          item
+          width="100%"
+          height="100%"
+          sx={{
+            backgroundColor: "#00aae4",
+          }}
+        >
+          <Grid
+            container
+            component="main"
+            sx={{ height: "100%", width: "100%" }}
+          >
+            {resultsList.map((singleResult, index) => (
+              <Grid item>
+                <Card
+                  key={index}
+                  sx={{
+                    width: 1550,
+                    backgroundColor: "#F5DEB3",
+                    border: " 2px solid #ffff",
+                  }}
+                  onClick={handleCardEvent}
                 >
-                  <Typography variant="body2" color="text.secondary">
-                    {singleResult.tratamiento}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {"Doctor:    "}
-                    {singleResult.doctor}
-                  </Typography>
+                  <CardContent>
+                    <Stack
+                      direction="row"
+                      spacing={5}
+                      justifyContent="space-between"
+                    >
+                      <Typography variant="body2" color="text.secondary">
+                        {singleResult.tratamiento}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {"Doctor:    "}
+                        {singleResult.doctor}
+                      </Typography>
 
-                  <Button>Comentarios</Button>
-                  <Button>Seguimientos</Button>
-                  <Typography variant="body2" color="text.secondary">
-                    {"Estado:     "}
-                    {singleResult.estado}
-                  </Typography>
-                </Stack>
-              </CardContent>
-            </Card>
+                      <Button
+                        {...SetupIndex(1)}
+                        onClick={() => {
+                          setValue(1);
+                        }}
+                      >
+                        Comentarios
+                      </Button>
+                      <Button
+                        {...SetupIndex(2)}
+                        onClick={() => {
+                          setValue(2);
+                        }}
+                      >
+                        Seguimientos
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        {"Estado:     "}
+                        {singleResult.estado}
+                      </Typography>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-    </Grid>
+        </Grid>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Comentarios
+        <Button
+          onClick={() => {
+            setValue(0);
+          }}
+        >
+          volver
+        </Button>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Seguimiento
+        <Button
+          onClick={() => {
+            setValue(0);
+          }}
+        >
+          volver
+        </Button>
+      </TabPanel>
+    </div>
   );
 }

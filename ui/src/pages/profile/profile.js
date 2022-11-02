@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
@@ -12,39 +11,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Journal from "./journal";
 import Turns from "./turns";
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
+import { TabPanel, SetupIndex } from "../../components/tabPanel/TabPanel";
 
 export default function Profile() {
   const mockUser = {
@@ -94,68 +61,80 @@ export default function Profile() {
             pr: { md: 0 },
           }}
         >
-          <Grid item md={1}>
+          <Grid item md={1} gridColumn="span 3">
             <Avatar sx={{ m: 1, bgcolor: "grey.800" }}>
               <AccountCircle />
             </Avatar>
           </Grid>
-          <Grid item md={5}>
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography
-                component="h1"
-                variant="h5"
-                color="inherit"
-                gutterBottom
-              >
-                Nombre: {user.name}
-              </Typography>
-            )}
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography variant="h5" color="inherit" paragraph>
-                Fecha de nacimiento: {user.birthday}
-              </Typography>
-            )}
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography variant="h5" color="inherit" paragraph>
-                DNI: {user.dni}
-              </Typography>
-            )}
+          <Grid item md={10}>
+            <Grid container>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    color="inherit"
+                    gutterBottom
+                  >
+                    Nombre: {user.name}
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography variant="h5" color="inherit" paragraph>
+                    Fecha de nacimiento: {user.birthday}
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography variant="h5" color="inherit" paragraph>
+                    DNI: {user.dni}
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    color="inherit"
+                    gutterBottom
+                  >
+                    Deporte: {user.sport}
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography variant="h5" color="inherit" paragraph>
+                    Peso: {user.wight} kg.
+                  </Typography>
+                )}
+              </Grid>
+              <Grid item md={6}>
+                {!user ? (
+                  <Skeleton />
+                ) : (
+                  <Typography variant="h5" color="inherit" paragraph>
+                    Altura: {user.height} cm.
+                  </Typography>
+                )}
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item md={5}>
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography
-                component="h1"
-                variant="h5"
-                color="inherit"
-                gutterBottom
-              >
-                Deporte: {user.sport}
-              </Typography>
-            )}
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography variant="h5" color="inherit" paragraph>
-                Peso: {user.wight} kg.
-              </Typography>
-            )}
-            {!user ? (
-              <Skeleton />
-            ) : (
-              <Typography variant="h5" color="inherit" paragraph>
-                Altura: {user.height} cm.
-              </Typography>
-            )}
-          </Grid>
-          <Grid item md={1}>
+          <Grid item md={1} gridColumn="span 3">
             <Edit />
           </Grid>
         </Grid>
@@ -164,8 +143,8 @@ export default function Profile() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Seguimiento" {...a11yProps(0)} />
-          <Tab label="Proximos Turnos" {...a11yProps(1)} />
+          <Tab label="Seguimiento" {...SetupIndex(0)} />
+          <Tab label="Proximos Turnos" {...SetupIndex(1)} />
         </Tabs>
       </Paper>
       <TabPanel value={value} index={0}>
