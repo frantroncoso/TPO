@@ -103,7 +103,7 @@ export default function Search() {
           width="450px"
           height="782px"
           sx={{
-            backgroundColor: "#f7fad2",
+            backgroundColor: "#dff7b2",
           }}
         >
           <Box
@@ -214,7 +214,7 @@ export default function Search() {
           width="1133px"
           height="782px"
           sx={{
-            backgroundColor: "#d8e8e8",
+            backgroundColor: "#f6fceb",
             overflow: "scroll",
           }}
         >
@@ -230,8 +230,8 @@ export default function Search() {
                   key={index}
                   sx={{
                     width: 1116,
-                    backgroundColor: "#a8d0da",
-                    border: " 2px solid #ffff",
+                    backgroundColor: "#dff7b2",
+                    border: " 2px solid #fff",
                   }}
                   onClick={handleCardEvent}
                 >
