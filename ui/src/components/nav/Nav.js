@@ -51,7 +51,7 @@ export default function Nav() {
       position="static"
       color="default"
       elevation={0}
-      sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+      sx={{backgroundColor:"#2fc4b2" }}
     >
       <Toolbar disableGutters>
         <img
