@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem } from "@mui/material";
-
+import { Box, Typography, ImageList, ImageListItem, ButtonGroup,Button, Container, Grid, Stack, Item, Paper  } from "@mui/material";
+import { styled } from '@mui/material/styles';
 export default function Landing() {
   const images = [
     {
@@ -16,35 +16,62 @@ export default function Landing() {
       img: "img/landing3.jpg",
     },
   ];
+  const buttons = [
+    <Button key="one">Si</Button>,
+    <Button key="two">No</Button>,
+  ];
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
 
   return (
-    <Box
-      m={5}
-      p={3}
-      sx={{
-        background: "linear-gradient(to right bottom, #D7A0FC, #64B3FF)",
-        borderRadius: "30px",
-      }}
-    >
-      <Typography variant="h3" color="white">
-        La mejor solucion a tus problemas con el deporte las vas a encontrar
-        en...
-      </Typography>
-      <ImageList
-        cols={3}
-        sx={{ borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px" }}
-      >
-        {images.map((item) => (
-          <ImageListItem sx={{ border: "1px white" }} key={item.img}>
-            <img
-              src={`${item.img}`}
-              srcSet={`${item.img}`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </Box>
+    <div>
+      <Container maxWidth="sm">
+
+      {/* <Button variant="outlined"  
+      size="large"
+        onClick={() => {
+          alert('te lleva a opciones');
+        }}
+      >Contanos que necesitás y te ayudamos a buscar al profesional adecuado</Button> */}
+
+        <Box sx={{ width: '100%', maxWidth: 500 }}>
+          <Typography variant="h3" gutterBottom>
+            Ya te atendiste con un especialista?
+          </Typography>
+        </Box>
+
+        <Stack spacing={2}>
+          <Item> 
+          <Button variant="outlined"  
+      size="large"
+        onClick={() => {
+          alert('te lleva a opciones');
+        }}
+      >Si</Button>
+          </Item>
+          <Item>
+          <Button variant="outlined"  
+      size="large"
+        onClick={() => {
+          alert('te lleva a opciones');
+        }}
+      >No</Button>
+            </Item>
+        </Stack>
+
+    {/* 
+      <ButtonGroup size="large" aria-label="large button group" >
+        {buttons}
+      </ButtonGroup> */}
+      </Container>
+      
+    </div>
+
   );
 }
