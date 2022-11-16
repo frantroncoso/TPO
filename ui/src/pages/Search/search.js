@@ -221,13 +221,15 @@ export default function Search() {
             container
             component="main"
             sx={{ height: "100%", width: "100%" }}
+            
           >
             {resultsList.map((singleResult, index) => (
-              <Grid item>
+              <Grid item padding= "7px">
                 <Card
                   key={index}
                   sx={{
-                    width: 1116,
+                    width: 358,
+                    height: 370,
                     backgroundColor: "#e1f7f1",
                     border: " 2px solid #117c6f",
                   }}

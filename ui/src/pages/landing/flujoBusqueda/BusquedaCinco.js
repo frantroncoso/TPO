@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function BusquedaCinco() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -49,9 +50,25 @@ export default function BusquedaCinco() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-        ¿Queres ver resultados de profesionales particular, de tu obra social o ambos?
+        ¿Queres ver resultados de profesionales particulares, de tu obra social o ambos?
         </Typography>
       </Container>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100%", width: "100%" }}
+      >
+        <Grid
+          item
+          width="73px"
+          height="550px"
+        >
+        </Grid>
+        <Grid
+          item //Checkbox especialidades
+          width="700px"
+          height="550px"
+        >
 
       <Stack 
         justifyContent="flex-end"
@@ -74,10 +91,21 @@ export default function BusquedaCinco() {
         </BootstrapButton>
 
       </Stack>
+      </Grid>
+      <Grid
+          item
+          width="300px"
+          height="550px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
 
       <div className="imagen">
-        <img src="img/8.jpg" width="500" height="550 "></img>
+        <img src="img/pag5.jpg" width="770" height="550 "></img>
       </div>
+      </Grid>
+      </Grid>
     </div>
 
   );

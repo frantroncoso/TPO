@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
+import { Typography, Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function BusquedaCuatro() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -49,30 +50,56 @@ export default function BusquedaCuatro() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-        ¿En que parte se encuentra tu dolor?
+          ¿En que parte se encuentra tu dolor?
         </Typography>
       </Container>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100%", width: "100%" }}
+      >
+        <Grid
+          item
+          width="73px"
+          height="550px"
+        >
+        </Grid>
+        <Grid
+          item
+          width="700px"
+          height="550px"
+        >
+          <Stack
+            justifyContent="flex-end"
+            divider={<Divider orientation="vertical" flexItem />}
+            spacing={2}>
 
-      <Stack 
-        justifyContent="flex-end"
-        divider={<Divider orientation="vertical" flexItem />}
-        spacing={2}>
+            <BootstrapButton variant="contained" disableRipple
+              href="/ocho">
+              Miembro inferior
+            </BootstrapButton>
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/ocho">
-          Miembro inferior 
-        </BootstrapButton>
+            <BootstrapButton variant="contained" disableRipple
+              href="/nueve">
+              Miembro superior
+            </BootstrapButton>
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/nueve">
-            Miembro superior
-        </BootstrapButton>
+          </Stack>
+        </Grid>
+        <Grid
+          item
+          width="300px"
+          height="550px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
+          <div className="imagen">
+            <img src="img/pag4.jpg" width="780" height="550"></img>
+          </div>
 
-      </Stack>
-
-      <div className="imagen">
-      <img src="img/2.jpg" width="550" height="550 "></img>
-      </div>
+        </Grid>
+      </Grid>
     </div>
 
   );

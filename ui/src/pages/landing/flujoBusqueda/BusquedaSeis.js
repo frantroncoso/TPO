@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function BusquedaSeis() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -52,6 +53,22 @@ export default function BusquedaSeis() {
         Quiero Prepararme físicamente
         </Typography>
       </Container>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100%", width: "100%" }}
+      >
+        <Grid
+          item
+          width="73px"
+          height="300px"
+        >
+        </Grid>
+        <Grid
+          item //Checkbox especialidades
+          width="800px"
+          height="300px"
+        >
 
       <Stack 
         justifyContent="flex-end"
@@ -69,15 +86,25 @@ export default function BusquedaSeis() {
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/cinco">
+          href="/siete">
             Ambos
         </BootstrapButton>
 
       </Stack>
-
+      </Grid>
+      <Grid
+          item
+          width="300px"
+          height="430px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
       <div className="imagen">
-        <img src="img/landing1.webp" width="600" height="450 "></img>
+        <img src="img/pag6.jpg" width="600" height="430 "></img>
       </div>
+      </Grid>
+      </Grid>
     </div>
 
   );
