@@ -2,6 +2,8 @@ import * as React from "react";
 import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
   Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import { fontStyle } from "@mui/system";
+import { dark } from "@mui/material/styles/createPalette";
 export default function Landing() {
 
   // imagenes de landing anterior
@@ -20,14 +22,16 @@ export default function Landing() {
   //   },
   // ];
 
+
+
   const BootstrapButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
-    fontSize: 24,
+    fontSize: 20,
     padding: '16px 22px',
-    border: '1px solid',
-    backgroundColor: '#000',
-    borderColor: '#000',
+    border: '5px solid',
+    backgroundColor: '#25be8b',
+    borderColor: '#25be8b',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -41,14 +45,14 @@ export default function Landing() {
       '"Segoe UI Symbol"',
     ].join(','),
     '&:hover': {
-      backgroundColor: '#fff',
+      backgroundColor: '#25be8b',
       borderColor: '#000',
       boxShadow: 'none',
-      color: 'black'
+      color: 'white'
     },
     '&:active': {
       boxShadow: 'none',
-      backgroundColor: '#fff',
+      backgroundColor: '#25be8b',
       borderColor: '#fff',
     },
   });
@@ -62,12 +66,27 @@ export default function Landing() {
   }));
 
   return (
-    <div>
+    <div >
+      
       <Container>
-        <Typography variant="h2" gutterBottom>
-          Inicio
+        <Typography variant="h5" align="center"  gutterBottom>
+          Cuida tu salud
         </Typography>
       </Container>
+      
+      <Container>
+        <Typography variant="h2" align="center" fontFamily={'arial'} gutterBottom>
+          Contacta a los mejores especialistas
+        </Typography>
+      </Container>
+
+      <Container>
+        <Typography variant="h5" align="center"  gutterBottom>
+          Te ayudaremos a encontrar al especialista indicado para tu situación
+        </Typography>
+      </Container>
+     
+
 
       <Stack 
         justifyContent="flex-end"
@@ -76,12 +95,26 @@ export default function Landing() {
 
         <BootstrapButton variant="contained" disableRipple
           href="/uno">
-          Iniciar Busqueda
+          Cuéntanos tu problema
         </BootstrapButton>
       </Stack>
-
+      <div>
+        <Grid
+            container
+            justify="center"
+            direction="column"
+            alignItems="center"
+            spacing={10}
+            >
+            <Grid item xs={12}>
+            <img src="img/landing.jpg" width="800" height="400" ></img>
+            <img src="img/landing4.jpg" width="800" height="400 " ></img>
+            </Grid>
+        </Grid>
+        
+        
+      </div>
 
     </div>
-
   );
 }
