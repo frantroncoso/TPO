@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { TabPanel, SetupIndex } from "../../components/tabPanel/TabPanel";
 import { fontWeight } from "@mui/system";
+import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function Journal() {
   const [value, setValue] = useState(0);

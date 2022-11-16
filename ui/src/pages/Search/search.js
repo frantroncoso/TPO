@@ -7,7 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, Gradient } from "@mui/icons-material";
 import FormGroup from "@mui/material/FormGroup";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useState } from "react";
@@ -103,7 +103,7 @@ export default function Search() {
           width="450px"
           height="782px"
           sx={{
-            backgroundColor: "#f7fad2",
+            backgroundColor: "#ebebeb",
           }}
         >
           <Box
@@ -212,7 +212,7 @@ export default function Search() {
         <Grid
           item
           sx={{
-            backgroundColor: "#d8e8e8",
+            backgroundColor: "#ebebeb",
             overflow: "scroll",
           }}
         >
@@ -228,8 +228,8 @@ export default function Search() {
                   key={index}
                   sx={{
                     width: 1116,
-                    backgroundColor: "#a8d0da",
-                    border: " 2px solid #ffff",
+                    backgroundColor: "#e1f7f1",
+                    border: " 2px solid #117c6f",
                   }}
                   onClick={handleCardEvent}
                 >
