@@ -1,30 +1,14 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
 import { styled } from '@mui/material/styles';
-export default function Landing() {
+export default function BusquedaNueve() {
 
-  // imagenes de landing anterior
-  // const images = [
-  //   {
-  //     title: "landing1",
-  //     img: "img/landing1.webp",
-  //   },
-  //   {
-  //     title: "landing2",
-  //     img: "img/landing2.jpg",
-  //   },
-  //   {
-  //     title: "landing3",
-  //     img: "img/landing3.jpg",
-  //   },
-  // ];
 
   const BootstrapButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
-    padding: '16px 22px',
+    padding: '10px 20px',
     border: '1px solid',
     backgroundColor: '#000',
     borderColor: '#000',
@@ -65,22 +49,55 @@ export default function Landing() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-          Inicio
+        ¿Que zona?
         </Typography>
       </Container>
 
       <Stack 
         justifyContent="flex-end"
         divider={<Divider orientation="vertical" flexItem />}
-        spacing={2}>
+        spacing={1}>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/uno">
-          Iniciar Busqueda
+          href="/cinco">
+            Cuello
         </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Hombro
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+          Brazo/antebrazo
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Columna
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Pecho
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Muñeca/mano
+        </BootstrapButton>
+    
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Otro
+        </BootstrapButton>
+
       </Stack>
 
-
+      <div className="imagen">
+      <img src="img/6.jpg" width="750" height="450 "></img>
+      </div>
     </div>
 
   );

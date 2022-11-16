@@ -1,24 +1,8 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
 import { styled } from '@mui/material/styles';
-export default function Landing() {
+export default function BusquedaCuatro() {
 
-  // imagenes de landing anterior
-  // const images = [
-  //   {
-  //     title: "landing1",
-  //     img: "img/landing1.webp",
-  //   },
-  //   {
-  //     title: "landing2",
-  //     img: "img/landing2.jpg",
-  //   },
-  //   {
-  //     title: "landing3",
-  //     img: "img/landing3.jpg",
-  //   },
-  // ];
 
   const BootstrapButton = styled(Button)({
     boxShadow: 'none',
@@ -65,7 +49,7 @@ export default function Landing() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-          Inicio
+        ¿En que parte se encuentra tu dolor?
         </Typography>
       </Container>
 
@@ -75,12 +59,20 @@ export default function Landing() {
         spacing={2}>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/uno">
-          Iniciar Busqueda
+          href="/ocho">
+          Miembro inferior 
         </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/nueve">
+            Miembro superior
+        </BootstrapButton>
+
       </Stack>
 
-
+      <div className="imagen">
+      <img src="img/2.jpg" width="550" height="550 "></img>
+      </div>
     </div>
 
   );

@@ -1,30 +1,14 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
 import { styled } from '@mui/material/styles';
-export default function Landing() {
+export default function BusquedaSiete() {
 
-  // imagenes de landing anterior
-  // const images = [
-  //   {
-  //     title: "landing1",
-  //     img: "img/landing1.webp",
-  //   },
-  //   {
-  //     title: "landing2",
-  //     img: "img/landing2.jpg",
-  //   },
-  //   {
-  //     title: "landing3",
-  //     img: "img/landing3.jpg",
-  //   },
-  // ];
 
   const BootstrapButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
-    padding: '16px 22px',
+    padding: '10px 20px',
     border: '1px solid',
     backgroundColor: '#000',
     borderColor: '#000',
@@ -65,22 +49,60 @@ export default function Landing() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-          Inicio
+        ¿Que deporte practicas/querés practicás?
         </Typography>
       </Container>
 
       <Stack 
         justifyContent="flex-end"
         divider={<Divider orientation="vertical" flexItem />}
-        spacing={2}>
+        spacing={1}>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/uno">
-          Iniciar Busqueda
+          href="/cinco">
+          Futbol 
         </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Tenis
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Rugby
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Basquet
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Voley
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Hockey
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Natacion
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/cinco">
+            Otro
+        </BootstrapButton>
+
       </Stack>
 
-
+      <div className="imagen">
+        <img src="img/landing1.webp" width="600" height="450 "></img>
+      </div>
     </div>
 
   );

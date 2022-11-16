@@ -1,24 +1,8 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
 import { styled } from '@mui/material/styles';
-export default function Landing() {
+export default function BusquedaUno() {
 
-  // imagenes de landing anterior
-  // const images = [
-  //   {
-  //     title: "landing1",
-  //     img: "img/landing1.webp",
-  //   },
-  //   {
-  //     title: "landing2",
-  //     img: "img/landing2.jpg",
-  //   },
-  //   {
-  //     title: "landing3",
-  //     img: "img/landing3.jpg",
-  //   },
-  // ];
 
   const BootstrapButton = styled(Button)({
     boxShadow: 'none',
@@ -65,7 +49,7 @@ export default function Landing() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-          Inicio
+        Contanos que necesitás y te ayudamos a buscar al profesional adecuado
         </Typography>
       </Container>
 
@@ -75,12 +59,30 @@ export default function Landing() {
         spacing={2}>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/uno">
-          Iniciar Busqueda
+          href="/dos">
+          Me lesioné / tengo un dolor
         </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/seis">
+          Quiero Prepararme físicamente
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/siete">
+          Quiero mejorar mi plan de alimentación o rutina
+        </BootstrapButton>
+
+        <BootstrapButton variant="contained" disableRipple
+          href="/professionals">
+          Necesito un certificado médico
+        </BootstrapButton>
+
       </Stack>
 
-
+      <div className="imagen">
+        <img src="img/4.jpg" width="600" height="650 "></img>
+      </div>
     </div>
 
   );
