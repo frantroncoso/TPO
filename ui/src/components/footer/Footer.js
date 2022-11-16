@@ -37,7 +37,7 @@ export default function Footer() {
           </Grid>
         </Grid>
         <Grid item sm={2} direction={"column"}>
-        <Link href="/" underline="hover">
+          <Link href="/" underline="hover">
             <Typography sx={{color:"black", marginBottom:0.5}}>Información de Deportes</Typography>
           </Link>
           <Link href="/" underline="hover">
@@ -47,9 +47,6 @@ export default function Footer() {
             <Typography sx={{color:"black"}}>Contactanos</Typography>
           </Link>
         </Grid>
-      </Grid>
-      <Grid container marginTop={3}>
-      <Grid item sm={3}/>
         <Grid item sm={2} sx={{display : "flex", direction: "row", alignItems: "center"}}>
           <Link
             variant="button"
@@ -88,6 +85,10 @@ export default function Footer() {
             </Avatar>
           </Link>
         </Grid>
+      </Grid>
+      <Grid container marginTop={3}>
+      <Grid item sm={3}/>
+        
         <Grid item spacing={4} sm={4} sx={{ display: 'flex', justifyContent: "space-around"}}>
           
         </Grid>
