@@ -1,6 +1,8 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import {
+  Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
+  Button, Container, Grid, Stack, Item, Paper, Divider
+} from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function BusquedaTres() {
 
@@ -50,30 +52,55 @@ export default function BusquedaTres() {
     <div>
       <Container>
         <Typography variant="h2" gutterBottom>
-        ¿Cual es la razon de tu busqueda?
+          ¿Cual es la razon de tu busqueda?
         </Typography>
       </Container>
 
-      <Stack 
-        justifyContent="flex-end"
-        divider={<Divider orientation="vertical" flexItem />}
-        spacing={2}>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100%", width: "100%" }}
+      >
+        <Grid
+          item //Checkbox especialidades
+          width="800px"
+          height="550px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/cuatro">
+        <Stack
+          justifyContent="flex-end"
+          divider={<Divider orientation="vertical" flexItem />}
+          spacing={2}>
+
+          <BootstrapButton variant="contained" disableRipple
+            href="/cuatro">
             Quiero recuperarme
-        </BootstrapButton>
+          </BootstrapButton>
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/cuatro">
-          Quiero una visión de otro doctor
-        </BootstrapButton>
+          <BootstrapButton variant="contained" disableRipple
+            href="/cuatro">
+            Quiero una visión de otro doctor
+          </BootstrapButton>
 
-      </Stack>
+        </Stack>
+        </Grid>
+        <Grid
+          item 
+          width="300px"
+          height="550px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
+          <div className="imagen" >
+            <img src="img/pag3.webp" width="783" height="550" ></img>
+          </div>
 
-      <div className="imagen">
-      <img src="img/2.jpg" width="550" height="550 "></img>
-      </div>
+        </Grid>
+      </Grid>
     </div>
 
   );

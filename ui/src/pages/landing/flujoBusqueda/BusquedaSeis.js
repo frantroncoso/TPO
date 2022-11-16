@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography,Button, Container, Stack, Paper, Divider } from "@mui/material";
+import { Typography,Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function BusquedaSeis() {
 
@@ -52,6 +52,19 @@ export default function BusquedaSeis() {
         Quiero Prepararme físicamente
         </Typography>
       </Container>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100%", width: "100%" }}
+      >
+        <Grid
+          item //Checkbox especialidades
+          width="800px"
+          height="430px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
 
       <Stack 
         justifyContent="flex-end"
@@ -74,10 +87,20 @@ export default function BusquedaSeis() {
         </BootstrapButton>
 
       </Stack>
-
+      </Grid>
+      <Grid
+          item
+          width="300px"
+          height="430px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
       <div className="imagen">
-        <img src="img/landing1.webp" width="600" height="450 "></img>
+        <img src="img/pag6.jpg" width="600" height="430 "></img>
       </div>
+      </Grid>
+      </Grid>
     </div>
 
   );

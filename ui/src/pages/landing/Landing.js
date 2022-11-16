@@ -1,6 +1,8 @@
 import * as React from "react";
-import { Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
-  Button, Container, Grid, Stack, Item, Paper, Divider  } from "@mui/material";
+import {
+  Box, Typography, ImageList, ImageListItem, ButtonGroup, Link,
+  Button, Container, Grid, Stack, Item, Paper, Divider
+} from "@mui/material";
 import { styled } from '@mui/material/styles';
 export default function Landing() {
 
@@ -63,22 +65,102 @@ export default function Landing() {
 
   return (
     <div>
-      <Container>
-        <Typography variant="h2" gutterBottom>
-          Inicio
-        </Typography>
-      </Container>
+      <Grid
+        container
+        component="main"
+        /* spacing={2} */ sx={{ height: "100%", width: "100%", backgroundColor: "#ebebeb",}}
+      >
+        <Grid
+          item
+          width="300px"
+          height="200px"
+        >
+          <div className="imagen">
+            <img src="img/inicio3.png" width="300" height="300 "></img>
+          </div>
+        </Grid>
+        <Grid
+          item
+          width="900px"
+          height="200px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
+          <Typography variant="h2" gutterBottom>
+            ¡Bienvenido a ImproveMe!
+          </Typography>
+          <Typography variant="h5" gutterBottom>
+            En nuestra página podras encontrar profesionales relacionados a deportes y sacar turnos con ellos. Además podrás
+            llevar un regitro de tus tratamientos, como de tus próximos turnos.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          width="330"
+          height="200px"
+        >
+          <div className="imagen">
+            <img src="img/inicio6.png" width="300" height="300 "></img>
+          </div>
+        </Grid>
 
-      <Stack 
-        justifyContent="flex-end"
-        divider={<Divider orientation="vertical" flexItem />}
-        spacing={2}>
+      </Grid>
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/uno">
-          Iniciar Busqueda
-        </BootstrapButton>
-      </Stack>
+      <Grid
+        container
+        component="main"
+        /* spacing={2} */ sx={{ height: "100%", width: "100%", backgroundColor: "#ebebeb", }}
+      >
+        <Grid
+          item
+          width="300px"
+          height="200px"
+          marginTop="120px"
+        >
+          <div className="imagen">
+            <img src="img/inicio4.png" width="300" height="300 "></img>
+          </div>
+
+        </Grid>
+        <Grid
+          item
+          width="900px"
+          height="400px"
+          sx={{
+            backgroundColor: "#ebebeb",
+          }}
+        >
+          <Typography variant="h3" gutterBottom>
+            ¡Prueba nuestra búsqueda dinámica que te ayudará a buscar al profesional más adecuado a tus necesidades!
+          </Typography>
+
+          <Stack
+            justifyContent="flex-end"
+            divider={<Divider orientation="vertical" flexItem />}
+            spacing={2}>
+
+            <BootstrapButton variant="contained" disableRipple
+              href="/uno">
+              Buscar Profesional
+            </BootstrapButton>
+          </Stack>
+
+        </Grid>
+        <Grid
+          item
+          width="300px"
+          height="200px"
+          marginTop="120px"
+        >
+          <div className="imagen">
+            <img src="img/inicio5.png" width="300" height="300 "></img>
+          </div>
+
+        </Grid>
+      </Grid>
+
+
 
 
     </div>
