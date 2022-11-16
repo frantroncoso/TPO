@@ -94,7 +94,7 @@ export default function Footer() {
         </Grid>
         <Grid container marginTop={8}>
           <Grid item sm={6} sx={{display:"flex", direction:"row", justifyContent:"space-evenly", alignItems:"center"}}>
-            <Typography variant="caption">© 2022 ImpruveME. Todos los derechos reservados.</Typography>
+            <Typography variant="caption">© 2022 ImproveME. Todos los derechos reservados.</Typography>
             <Typography>·</Typography>
             <Link underline="hover"
             >
