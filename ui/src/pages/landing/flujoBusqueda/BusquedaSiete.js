@@ -10,8 +10,8 @@ export default function BusquedaSiete() {
     fontSize: 24,
     padding: '10px 20px',
     border: '1px solid',
-    backgroundColor: '#000',
-    borderColor: '#000',
+    backgroundColor: '#25be8b',
+    borderColor: '#25be8b',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',

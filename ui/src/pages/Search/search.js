@@ -211,8 +211,6 @@ export default function Search() {
 
         <Grid
           item
-          width="1133px"
-          height="782px"
           sx={{
             backgroundColor: "#ebebeb",
             overflow: "scroll",
