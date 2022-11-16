@@ -14,7 +14,7 @@ import { Avatar } from "@mui/material";
 
 export default function Footer() {
   return (
-    <Box component="footer" alignItems={"center"} sx={{ bgcolor: "#D9D9D9", py: 3}}>
+    <Box component="footer" alignItems={"center"} sx={{ bgcolor: "#2fc4b2", py: 3}}>
       <Grid container spacing={1} direction={"row"}>
         <Grid item sm={3}>
 {/* Logo */}
@@ -92,7 +92,7 @@ export default function Footer() {
           
         </Grid>
         <Grid container marginTop={8}>
-          <Grid item sm={6} sx={{display:"flex", direction:"row", justifyContent:"space-evenly"}}>
+          <Grid item sm={6} sx={{display:"flex", direction:"row", justifyContent:"space-evenly", alignItems:"center"}}>
             <Typography variant="caption">© 2022 ImpruveME. Todos los derechos reservados.</Typography>
             <Typography>·</Typography>
             <Link underline="hover"
