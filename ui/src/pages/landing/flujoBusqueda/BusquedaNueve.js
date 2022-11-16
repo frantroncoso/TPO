@@ -5,6 +5,7 @@ export default function BusquedaNueve() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -58,12 +59,15 @@ export default function BusquedaNueve() {
         sx={{ height: "100%", width: "100%" }}
       >
         <Grid
+          item
+          width="73px"
+          height="550px"
+        >
+        </Grid>
+        <Grid
           item //Checkbox especialidades
-          width="800px"
+          width="700px"
           height="600px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
         >
 
           <Stack

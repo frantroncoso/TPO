@@ -5,6 +5,7 @@ export default function BusquedaSeis() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -58,12 +59,15 @@ export default function BusquedaSeis() {
         sx={{ height: "100%", width: "100%" }}
       >
         <Grid
+          item
+          width="73px"
+          height="300px"
+        >
+        </Grid>
+        <Grid
           item //Checkbox especialidades
           width="800px"
-          height="430px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
+          height="300px"
         >
 
       <Stack 
@@ -82,7 +86,7 @@ export default function BusquedaSeis() {
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
-          href="/cinco">
+          href="/siete">
             Ambos
         </BootstrapButton>
 

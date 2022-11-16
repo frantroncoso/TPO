@@ -64,18 +64,12 @@ export default function BusquedaUno() {
           item
           width="73px"
           height="550px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
         >
         </Grid>
         <Grid
           item
           width="725px"
           height="550px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
         >
 
           <Stack

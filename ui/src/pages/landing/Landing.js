@@ -60,14 +60,11 @@ export default function Landing() {
           item
           width="900px"
           height="200px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
         >
-          <Typography variant="h2" gutterBottom>
+          <Typography variant="h2" gutterBottom fontWeight="bold" textAlign="center">
             ¡Bienvenido a ImproveMe!
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom textAlign="center">
             En nuestra página podras encontrar profesionales relacionados a
             deportes y sacar turnos con ellos. Además podrás llevar un regitro
             de tus tratamientos, como de tus próximos turnos.
@@ -108,11 +105,8 @@ export default function Landing() {
           item
           width="900px"
           height="400px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h3" gutterBottom textAlign="center">
             ¡Prueba nuestra búsqueda dinámica que te ayudará a buscar al
             profesional más adecuado a tus necesidades!
           </Typography>

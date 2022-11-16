@@ -5,6 +5,7 @@ export default function BusquedaDos() {
 
 
     const BootstrapButton = styled(Button)({
+        width: "650px",
         boxShadow: 'none',
         textTransform: 'none',
         fontSize: 24,
@@ -59,12 +60,15 @@ export default function BusquedaDos() {
          sx={{ height: "100%", width: "100%" }}
             >
                 <Grid
+          item
+          width="73px"
+          height="550px"
+        >
+        </Grid>
+                <Grid
                     item //Checkbox especialidades
                     width="800px"
                     height="550px"
-                    sx={{
-                        backgroundColor: "#ebebeb",
-                    }}
                 >
                     <Stack
                     justifyContent="flex-end"

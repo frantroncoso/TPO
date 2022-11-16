@@ -5,6 +5,7 @@ export default function BusquedaCinco() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -58,12 +59,15 @@ export default function BusquedaCinco() {
         sx={{ height: "100%", width: "100%" }}
       >
         <Grid
-          item //Checkbox especialidades
-          width="800px"
+          item
+          width="73px"
           height="550px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
+        >
+        </Grid>
+        <Grid
+          item //Checkbox especialidades
+          width="700px"
+          height="550px"
         >
 
       <Stack 
@@ -98,7 +102,7 @@ export default function BusquedaCinco() {
         >
 
       <div className="imagen">
-        <img src="img/pag5.jpg" width="783" height="550 "></img>
+        <img src="img/pag5.jpg" width="770" height="550 "></img>
       </div>
       </Grid>
       </Grid>

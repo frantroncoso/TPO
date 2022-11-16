@@ -8,6 +8,7 @@ export default function BusquedaTres() {
 
 
   const BootstrapButton = styled(Button)({
+    width:"650px",
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 24,
@@ -62,12 +63,15 @@ export default function BusquedaTres() {
         sx={{ height: "100%", width: "100%" }}
       >
         <Grid
-          item //Checkbox especialidades
-          width="800px"
+          item
+          width="73px"
           height="550px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
+        >
+        </Grid>
+        <Grid
+          item //Checkbox especialidades
+          width="700px"
+          height="550px"
         >
 
         <Stack
