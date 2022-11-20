@@ -2,12 +2,17 @@ import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import Container from "@mui/material/Container";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { AccountCircle, Gradient } from "@mui/icons-material";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FormGroup from "@mui/material/FormGroup";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useState } from "react";
@@ -37,6 +42,7 @@ export default function Search() {
   ];
 
   const especialista = [
+    { label: "Traumatólogo" },
     { label: "Kinesiólogo" },
     { label: "Deportólogo" },
     { label: "Nutricionista" },
@@ -45,43 +51,44 @@ export default function Search() {
 
   const mockDoctores = [
     {
-      nombre: "Juan Perez",
-      especialidad: " Kinesiólogo",
+      nombre: "Dr. Ignacio Alonso Hidalgo",
+      especialidad: "Traumatólogo",
       deporte: "Futbol",
       localidad: "CABA",
-      calificacion: "5 Estrellas",
+      calificacion: 5,
+      address: "Avenida Callao 875 2d, Capital Federal",
+      avatar: "img/prof1.png",
     },
     {
-      nombre: "Carlos Perez",
-      especialidad: " Deportólogo",
+      nombre: "Dr. Eliseo Firman",
+      especialidad: "Deportólogo",
       deporte: "Futbol",
       localidad: "CABA",
-      calificacion: "5 Estrellas",
+      calificacion: 3,
+      address: "Av Libertador 4992",
+      avatar: "img/prof2.png",
     },
     {
-      nombre: "Alberto Perez",
+      nombre: "Dr. Gustavo Gómez Rodríguez",
       especialidad: "Nutricionista",
       deporte: "Futbol",
       localidad: "CABA",
-      calificacion: "5 Estrellas",
+      calificacion: 2,
+      address: "Juramento 2089, 5° piso Of. 505",
+      avatar: "img/prof3.png",
     },
     {
-      nombre: "Pablo Perez",
-      especialidad: " Entrenador Personalizado",
+      nombre: "Dr. Nicolas Irigoitia",
+      especialidad: "Entrenador Personalizado",
       deporte: "Futbol",
       localidad: "CABA",
-      calificacion: "5 Estrellas",
+      calificacion: 4,
+      address: "Marcelo T de Alvear 1719 3°Piso",
+      avatar: "img/prof4.png",
     },
   ];
 
   const [resultsList, setresultsList] = useState([]);
-
-  /* const handleIngredientChange = (e, index) => {
-      const { name, value } = e.target;
-      const list = [...ingredientList];
-      list[index][name] = value;
-      setingredientList(list);
-    }; */
 
   const mostrarResultados = () => {
     setresultsList(mockDoctores);
@@ -92,180 +99,103 @@ export default function Search() {
   };
 
   return (
-    <div alignItems="center">
-      <Grid
-        container
-        component="main"
-        /* spacing={2} */ sx={{ height: "100%", width: "100%" }}
-      >
-        <Grid
-          item //Checkbox especialidades
-          width="450px"
-          height="782px"
-          sx={{
-            backgroundColor: "#ebebeb",
-          }}
-        >
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Autocomplete
-              multiple
-              disablePortal
-              id="deporteSeleccionado"
-              options={especialista}
-              filterSelectedOptions
-              margin="normal"
-              required
-              fullWidth
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Seleccione la Profesión del Especialista"
-                />
-              )}
-            />
-          </Box>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Autocomplete
-              multiple
-              disablePortal
-              id="deporteSeleccionado"
-              options={dolores}
-              filterSelectedOptions
-              margin="normal"
-              required
-              fullWidth
-              renderInput={(params) => (
-                <TextField {...params} label="Seleccione su Zona de dolor" />
-              )}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Autocomplete
-              multiple
-              disablePortal
-              id="deporteSeleccionado"
-              options={deportes}
-              filterSelectedOptions
-              margin="normal"
-              required
-              fullWidth
-              renderInput={(params) => (
-                <TextField {...params} label="Seleccione su Deporte" />
-              )}
-            />
-          </Box>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <h4>Seleccione la Localidad donde desea atenderse</h4>
-            <FormGroup>
+    <div>
+      <Paper elevation={3} sx={{ mb: 3, p: 1 }}>
+        <Stack direction="row" spacing={5}>
+          <Autocomplete
+            multiple
+            disablePortal
+            id="deporteSeleccionado"
+            options={especialista}
+            filterSelectedOptions
+            margin="normal"
+            required
+            sx={{ width: 350 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Seleccione la Profesión del Especialista"
+              />
+            )}
+          />
+          <Autocomplete
+            multiple
+            disablePortal
+            id="deporteSeleccionado"
+            options={dolores}
+            filterSelectedOptions
+            margin="normal"
+            required
+            sx={{ width: 350 }}
+            renderInput={(params) => (
+              <TextField {...params} label="Seleccione su Zona de dolor" />
+            )}
+          />
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">Localidad</FormLabel>
+            <FormGroup row={true}>
               <FormControlLabel control={<Checkbox />} label="CABA" />
               <FormControlLabel control={<Checkbox />} label="GBA" />
             </FormGroup>
-          </Box>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Button onClick={() => mostrarResultados()}>
-              Buscar Especialista
-            </Button>
-          </Box>
-        </Grid>
-
-        <Grid
-          item
-          sx={{
-            backgroundColor: "#ebebeb",
-            overflow: "scroll",
-          }}
-        >
-          <h4>Mis Resultados</h4>
-          <Grid
-            container
-            component="main"
-            sx={{ height: "100%", width: "100%" }}
-            
-          >
-            {resultsList.map((singleResult, index) => (
-              <Grid item padding= "7px">
-                <Card
-                  key={index}
-                  sx={{
-                    width: 358,
-                    height: 370,
-                    backgroundColor: "#e1f7f1",
-                    border: " 2px solid #117c6f",
-                  }}
-                  onClick={handleCardEvent}
-                >
-                  <CardHeader
-                    avatar={
-                      <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                        <AccountCircle />
-                      </Avatar>
-                    }
-                    title={singleResult.nombre}
-                    subheader={singleResult.especialidad}
-                  />
-                  <CardContent>
-                    <Stack direction="row" spacing={5}>
+          </FormControl>
+          <Button onClick={() => mostrarResultados()}>
+            Buscar Especialista
+          </Button>
+        </Stack>
+      </Paper>
+      <Container>
+        <Grid container>
+          {resultsList.map((singleResult, index) => (
+            <Grid item xs={4} padding="7px">
+              <Card
+                key={index}
+                sx={{
+                  backgroundColor: "#e1f7f1",
+                  border: " 2px solid #117c6f",
+                }}
+                onClick={handleCardEvent}
+              >
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      alt={singleResult.nombre}
+                      src={singleResult.avatar}
+                    />
+                  }
+                  title={singleResult.nombre}
+                  subheader={
+                    <div>
                       <Typography variant="body2" color="text.secondary">
-                        {"Deporte:    "}
-                        {singleResult.deporte}
+                        {`${singleResult.especialidad} (${singleResult.deporte})`}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {"Localidad:    "}
+                        {[...Array(singleResult.calificacion)].map((e, i) => (
+                          <StarIcon fontSize="small" key={`${index}-${i}`} />
+                        ))}
+                        {[...Array(5 - singleResult.calificacion)].map(
+                          (e, i) => (
+                            <StarBorderIcon
+                              fontSize="small"
+                              key={`${index}-${i}`}
+                            />
+                          )
+                        )}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        <LocationOnIcon fontSize="small" />
                         {singleResult.localidad}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {"Calificación:     "}
-                        {singleResult.calificacion}
-                      </Typography>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+                    </div>
+                  }
+                />
+                {/* <CardContent>
+                
+              </CardContent> */}
+              </Card>
+            </Grid>
+          ))}
         </Grid>
-      </Grid>
+      </Container>
     </div>
   );
 }

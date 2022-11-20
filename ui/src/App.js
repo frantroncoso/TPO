@@ -20,7 +20,6 @@ import BusquedaSiete from "./pages/landing/flujoBusqueda/BusquedaSiete";
 import BusquedaOcho from "./pages/landing/flujoBusqueda/BusquedaOcho";
 import BusquedaNueve from "./pages/landing/flujoBusqueda/BusquedaNueve";
 
-
 const theme = createTheme();
 
 export default function App() {
@@ -28,7 +27,8 @@ export default function App() {
     <div className="App">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>TPO</title>
+        <title>ImproveME</title>
+        <link rel="icon" href="img/logo.svg" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -43,16 +43,15 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/search" element={<Search />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/uno" element={<BusquedaUno/>} />
-            <Route path="/dos" element={<BusquedaDos/>} />
-            <Route path="/tres" element={<BusquedaTres/>} />
-            <Route path="/cuatro" element={<BusquedaCuatro/>} />
-            <Route path="/cinco" element={<BusquedaCinco/>} />
-            <Route path="/seis" element={<BusquedaSeis/>} />
-            <Route path="/siete" element={<BusquedaSiete/>} />
-            <Route path="/ocho" element={<BusquedaOcho/>} />
-            <Route path="/nueve" element={<BusquedaNueve/>} />
-
+            <Route path="/uno" element={<BusquedaUno />} />
+            <Route path="/dos" element={<BusquedaDos />} />
+            <Route path="/tres" element={<BusquedaTres />} />
+            <Route path="/cuatro" element={<BusquedaCuatro />} />
+            <Route path="/cinco" element={<BusquedaCinco />} />
+            <Route path="/seis" element={<BusquedaSeis />} />
+            <Route path="/siete" element={<BusquedaSiete />} />
+            <Route path="/ocho" element={<BusquedaOcho />} />
+            <Route path="/nueve" element={<BusquedaNueve />} />
           </Routes>
         </Router>
         <Footer />
