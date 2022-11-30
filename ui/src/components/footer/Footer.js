@@ -23,7 +23,7 @@ export default function Footer() {
     >
       <Grid container justifyContent="center" spacing={1} direction={"row"}>
         <Grid item sm={1.5}>
-          <Link href="/" underline="hover">
+          <Link href="/nosotros" underline="hover">
             <Typography sx={{ color: "black", marginBottom: 0.5 }}>
               Sobre Nosotros
             </Typography>
@@ -45,17 +45,17 @@ export default function Footer() {
           </Typography>
         </Grid>
         <Grid item sm={2}>
-          <Link href="/" underline="hover">
+          <Link href="/deportes" underline="hover">
             <Typography sx={{ color: "black", marginBottom: 0.5 }}>
               Información de Deportes
             </Typography>
           </Link>
-          <Link href="/" underline="hover">
+          <Link href="/prevencion" underline="hover">
             <Typography sx={{ color: "black", marginBottom: 0.5 }}>
               Prevención de lesiones
             </Typography>
           </Link>
-          <Link href="/" underline="hover">
+          <Link href="/contacto" underline="hover">
             <Typography sx={{ color: "black" }}>Contactanos</Typography>
           </Link>
         </Grid>
@@ -105,13 +105,13 @@ export default function Footer() {
               © 2022 ImproveME. Todos los derechos reservados.
             </Typography>
             <Typography>·</Typography>
-            <Link underline="hover">
+            <Link underline="hover" href="/politicasprivacidad">
               <Typography variant="caption" sx={{ color: "black" }}>
                 Políticas de Privacidad
               </Typography>
             </Link>
             <Typography>·</Typography>
-            <Link underline="hover">
+            <Link underline="hover" href="/terminos&condiciones">
               <Typography variant="caption" sx={{ color: "black" }}>
                 Términos y Condiciones
               </Typography>

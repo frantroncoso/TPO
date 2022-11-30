@@ -19,6 +19,12 @@ import BusquedaSeis from "./pages/landing/flujoBusqueda/BusquedaSeis";
 import BusquedaSiete from "./pages/landing/flujoBusqueda/BusquedaSiete";
 import BusquedaOcho from "./pages/landing/flujoBusqueda/BusquedaOcho";
 import BusquedaNueve from "./pages/landing/flujoBusqueda/BusquedaNueve";
+import Nosotros from "./components/nosotros/Nosotros";
+import TerminosyCon from "./components/ter&con/TerminosyCon";
+import PoliticasPriv from "./components/privacidad/PoliticasPriv";
+import Contactanos from "./components/contacto/Contactanos";
+import Prevencion from "./components/informacion/Prevencion";
+import Deportes from "./components/informacion/Deportes";
 
 const theme = createTheme();
 
@@ -52,6 +58,12 @@ export default function App() {
             <Route path="/siete" element={<BusquedaSiete />} />
             <Route path="/ocho" element={<BusquedaOcho />} />
             <Route path="/nueve" element={<BusquedaNueve />} />
+            <Route path="/sobrenosotros" element={<Nosotros />} />
+            <Route path="/terminos&condiciones" element={<TerminosyCon />} />
+            <Route path="/politicasprivacidad" element={<PoliticasPriv />} />
+            <Route path="/contacto" element={<Contactanos />} />
+            <Route path="/prevencion" element={<Prevencion />} />
+            <Route path="/deportes" element={<Deportes />} />
           </Routes>
         </Router>
         <Footer />
