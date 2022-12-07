@@ -5,13 +5,21 @@ import {
   Stack,
   CardContent,
   Card,
-  Grid,
   Typography,
 } from "@mui/material";
 import { TabPanel, SetupIndex } from "../../components/tabPanel/TabPanel";
 import { fontWeight } from "@mui/system";
 import CardActions from '@mui/material/CardActions';
 import CardMedia from '@mui/material/CardMedia';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import Accordion from "@mui/material/Accordion";
+
+
+
+
 
 export default function Journal() {
   const [value, setValue] = useState(0);
@@ -23,7 +31,7 @@ export default function Journal() {
       sesion1:
         "El paciente se presentó con el objetivo de disminuir su grasa corporal, ganando masa muscular, siguiendo una rutina de alimentación la cual va a complementar con entrenamiento en un gimnasio. ",
       sesion2:
-        "El paciente presentó un aumento de masa muscular y una reducción de grasa corporal, presenta dificultades para seguir extrictamente la rutina alimentaria y cumple con su entrenamiento. Se le indicó seguir con la dieta",
+        "Sesión 2: El paciente presentó un aumento de masa muscular y una reducción de grasa corporal, presenta dificultades para seguir extrictamente la rutina alimentaria y cumple con su entrenamiento. Se le indicó seguir con la dieta",
       pasos:
         "Se le indicó asistir a un turno con una nutricionista, para obtener medidas corporales y luego armar un plan de alimentación en base a eso.",
       sesion1Comentarios:
@@ -35,6 +43,12 @@ export default function Journal() {
       tratamiento: "Traumatología - Zona Hombros",
       doctor: " Juan Perez",
       estado: "Finalizado",
+      sesion1:
+        "El paciente se presentó con el objetivo de disminuir su grasa corporal, ganando masa muscular, siguiendo una rutina de alimentación la cual va a complementar con entrenamiento en un gimnasio. ",
+      pasos:
+        "Se le indicó asistir a un turno con una nutricionista, para obtener medidas corporales y luego armar un plan de alimentación en base a eso.",
+      sesion1Comentarios:
+        "La Lic. Gutierrez recomienda al paciente reservar un turno con la nutricionista Lic. Díaz, ya que trabajo con muchos pacientes junto a ella. Tiene buena disponibilidad y trabaja de manera excelente.",
     },
     {
       tratamiento: "Kinesiología",
@@ -48,253 +62,46 @@ export default function Journal() {
   };
 
   return (
-    <div>
-      <TabPanel value={value} index={0}>
-        <Grid item width="100%" height="100%">
-          <Grid
-            container
-            component="main"
-            sx={{ height: "100%", width: "100%" }}
-          >
-            {resultsList.map((singleResult, index) => (
-              <Grid
-                item
-                sx={{
-                  width: "100%",
-                  mb: 3,
-                }}
-              >
-                <Card
-                  key={index}
-                  sx={{
-                    backgroundColor: "#a8d0da",
-                    border: " 2px solid #ffff",
-                  }}
-                  onClick={handleCardEvent}
-                >
-                  <CardContent>
-                    <Stack
-                      direction="row"
-                      spacing={5}
-                      justifyContent="space-between"
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        {singleResult.tratamiento}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {"Doctor:    "}
-                        {singleResult.doctor}
-                      </Typography>
+    <Grid container justifyContent={"center"}>
+      {resultsList.map((singleResult, index) => (
 
-                      <Button
-                        {...SetupIndex(1)}
-                        onClick={() => {
-                          setValue(1);
-                        }}
-                      >
-                        Comentarios
-                      </Button>
-                      <Button
-                        {...SetupIndex(2)}
-                        onClick={() => {
-                          setValue(2);
-                        }}
-                      >
-                        Seguimientos
-                      </Button>
-                      <Typography variant="body2" color="text.secondary">
-                        {"Estado:     "}
-                        {singleResult.estado}
-                      </Typography>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Comentarios
-        <Button
-          onClick={() => {
-            setValue(0);
-          }}
-        >
-          volver
-        </Button>
-        <Grid container component="main" sx={{ height: "100%", width: "100%" }}>
-          <Grid
-            item
-            sx={{
-              backgroundColor: "#a8d0da",
-              height: "100%",
-              width: "100%",
-              border: " 3px solid black",
-            }}
+            
+      <Grid container xs={11} sx={{marginBottom:2}}>
+        <Grid item xs={12}>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
+            
           >
-            <Stack direction="row" spacing={5} justifyContent="space-between">
-              <Typography
-                fontSize="x-large"
-                fontWeight="1000"
-                variant="subtitle1"
-                color="text.secondary"
-                align="justify"
-              >
-                Comentarios: {resultsList[0].tratamiento}
-              </Typography>
-              <Typography
-                fontSize="x-large"
-                fontWeight="1000"
-                variant="subtitle1"
-                color="text.secondary"
-                align="justify"
-              >
-                Doctor: {resultsList[0].doctor}
-              </Typography>
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            sx={{
-              backgroundColor: "#d8e8e8",
-              height: "100%",
-              width: "100%",
-              border: " 1px solid black",
-            }}
-          >
-            <Typography
-              fontSize="large"
-              fontWeight="bold"
-              variant="body2"
-              color="text.secondary"
-            >
+            <Typography variant="h5" sx={{ width: '33%', flexShrink: 0 }}>
+              {singleResult.tratamiento}
+            </Typography>
+            <Typography sx={{ width: '33%', color: 'text.secondary' }}>
+              {singleResult.doctor}
+            </Typography>
+            <Typography sx={{color: 'red' }}>
+              {singleResult.estado}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
               Sesion 1:
+              
             </Typography>
-            <Typography
-              fontSize="medium"
-              variant="body2"
-              color="text.secondary"
-            >
-              {resultsList[0].sesion1Comentarios}
+            <Typography variant={"subtitle1"}>
+            {singleResult.sesion1}
             </Typography>
-            <Typography
-              fontSize="large"
-              fontWeight="bold"
-              variant="body2"
-              color="text.secondary"
-            >
-              Sesion 2:
+            <Typography>
+              sesion 2:
+              {singleResult.sesion2}
             </Typography>
-            <Typography
-              fontSize="medium"
-              variant="body2"
-              color="text.secondary"
-            >
-              {resultsList[0].sesion2Comentarios}
-            </Typography>
-          </Grid>
+          </AccordionDetails>
+        </Accordion>
         </Grid>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Seguimiento
-        <Button
-          onClick={() => {
-            setValue(0);
-          }}
-        >
-          volver
-        </Button>
-        <Grid container component="main" sx={{ height: "100%", width: "100%" }}>
-          <Grid
-            item
-            sx={{
-              backgroundColor: "#a8d0da",
-              height: "100%",
-              width: "100%",
-              border: " 3px solid black",
-            }}
-          >
-            <Stack direction="row" spacing={5} justifyContent="space-between">
-              <Typography
-                fontSize="x-large"
-                fontWeight="1000"
-                variant="subtitle1"
-                color="text.secondary"
-                align="justify"
-              >
-                {resultsList[0].tratamiento}
-              </Typography>
-              <Typography
-                fontSize="x-large"
-                fontWeight="1000"
-                variant="subtitle1"
-                color="text.secondary"
-                align="justify"
-              >
-                Doctor: {resultsList[0].doctor}
-              </Typography>
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            sx={{
-              backgroundColor: "#d8e8e8",
-              height: "100%",
-              width: "100%",
-              border: " 1px solid black",
-            }}
-          >
-            <Typography
-              fontSize="large"
-              fontWeight="bold"
-              variant="body2"
-              color="text.secondary"
-            >
-              Sesion 1:
-            </Typography>
-            <Typography
-              fontSize="medium"
-              variant="body2"
-              color="text.secondary"
-            >
-              {resultsList[0].sesion1}
-            </Typography>
-
-            <Typography
-              fontSize="large"
-              fontWeight="bold"
-              variant="body2"
-              color="text.secondary"
-            >
-              Sesion 2:
-            </Typography>
-            <Typography
-              fontSize="medium"
-              variant="body2"
-              color="text.secondary"
-            >
-              {resultsList[0].sesion2}
-            </Typography>
-
-            <Typography
-              fontSize="large"
-              fontWeight="bold"
-              variant="body2"
-              color="text.secondary"
-            >
-              Pasos a seguir:
-            </Typography>
-            <Typography
-              fontSize="medium"
-              variant="body2"
-              color="text.secondary"
-            >
-              {resultsList[0].pasos}
-            </Typography>
-          </Grid>
-        </Grid>
-      </TabPanel>
-    </div>
+      </Grid>
+        ))}
+    </Grid>
   );
 }
