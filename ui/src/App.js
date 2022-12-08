@@ -13,7 +13,6 @@ import Profile from "./pages/profile/profile";
 import BusquedaUno from "./pages/landing/flujoBusqueda/BusquedaUno";
 import BusquedaDos from "./pages/landing/flujoBusqueda/BusquedaDos";
 import BusquedaTres from "./pages/landing/flujoBusqueda/BusquedaTres";
-import BusquedaCuatro from "./pages/landing/flujoBusqueda/BusquedaCuatro";
 import BusquedaCinco from "./pages/landing/flujoBusqueda/BusquedaCinco";
 import BusquedaSeis from "./pages/landing/flujoBusqueda/BusquedaSeis";
 import BusquedaSiete from "./pages/landing/flujoBusqueda/BusquedaSiete";
@@ -52,7 +51,6 @@ export default function App() {
             <Route path="/uno" element={<BusquedaUno />} />
             <Route path="/dos" element={<BusquedaDos />} />
             <Route path="/tres" element={<BusquedaTres />} />
-            <Route path="/cuatro" element={<BusquedaCuatro />} />
             <Route path="/cinco" element={<BusquedaCinco />} />
             <Route path="/seis" element={<BusquedaSeis />} />
             <Route path="/siete" element={<BusquedaSiete />} />
