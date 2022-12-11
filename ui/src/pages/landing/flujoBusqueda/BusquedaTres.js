@@ -4,8 +4,38 @@ import {
   Button, Container, Grid, Stack, Item, Paper, Divider
 } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import CircularProgress from '@mui/material/CircularProgress';
 export default function BusquedaTres() {
 
+
+  const volver = () => {
+    window.history.back();
+  };
+
+  function CircularProgressWithLabel(props) {
+    return (
+      <Box sx={{ position: 'relative', display: 'inline-flex', marginLeft:"20px", marginTop:"225px"}}>
+        
+        <CircularProgress sx={{color:"#25be8b"}} variant="determinate" {...props} />
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography variant="caption" component="div" color="text.secondary">
+            {`${Math.round(props.value)}%`}
+          </Typography>
+        </Box>
+      </Box>
+    );
+  }
 
   const BootstrapButton = styled(Button)({
     width:"650px",
@@ -52,6 +82,9 @@ export default function BusquedaTres() {
   return (
     <div>
       <Container>
+      <BootstrapButton variant="contained" disableRipple sx={{height:"10px", width:"100px", marginTop:"10px"}} onClick={volver}>
+          Regresar
+        </BootstrapButton>
         <Typography variant="h2" gutterBottom>
           ¿Cual es la razon de tu busqueda?
         </Typography>
@@ -67,6 +100,7 @@ export default function BusquedaTres() {
           width="73px"
           height="550px"
         >
+          <CircularProgressWithLabel value={75} />
         </Grid>
         <Grid
           item //Checkbox especialidades
@@ -80,12 +114,12 @@ export default function BusquedaTres() {
           spacing={2}>
 
           <BootstrapButton variant="contained" disableRipple
-            href="/cuatro">
+            href="/ocho">
             Quiero recuperarme
           </BootstrapButton>
 
           <BootstrapButton variant="contained" disableRipple
-            href="/cuatro">
+            href="/ocho">
             Quiero una visión de otro doctor
           </BootstrapButton>
 
