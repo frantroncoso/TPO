@@ -5,9 +5,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import Nav from "./components/nav/Nav";
+import NavProfesional from "./components/nav/NavProfesional";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/footer/Footer";
-import Search from "./pages/search/search";
+import Search from "./pages/Search/search";
 import Profile from "./pages/profile/profile";
 
 import BusquedaUno from "./pages/landing/flujoBusqueda/BusquedaUno";
@@ -33,7 +35,7 @@ export default function App() {
     <div className="App">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>ImproveME</title>
+        <title>ImproveMe</title>
         <link rel="icon" href="img/logo.svg" />
         <link
           rel="stylesheet"
@@ -66,8 +68,8 @@ export default function App() {
             <Route path="/deportes" element={<Deportes />} />
           </Routes>
         </Router>
-        <Footer />
       </ThemeProvider>
+      <Footer />
     </div>
   );
 }

@@ -15,6 +15,8 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FormGroup from "@mui/material/FormGroup";
 import Autocomplete from "@mui/material/Autocomplete";
+import Box from '@mui/material/Box';
+
 import { useState } from "react";
 
 import Card from "@mui/material/Card";
@@ -32,13 +34,13 @@ export default function Search() {
     { label: "Entrenamiento Personalizado" },
   ];
 
-  const dolores = [
-    { label: "Muñeca" },
-    { label: "Hombro" },
-    { label: "Rodilla" },
-    { label: "Cadera" },
+  const miembro = [
     { label: "Cuello" },
-    { label: "Codo" },
+    { label: "Hombro" },
+    { label: "Brazo/antebrazo" },
+    { label: "Columna" },
+    { label: "Pecho" },
+    { label: "Muñeca/mano" }
   ];
 
   const especialista = [
@@ -48,6 +50,8 @@ export default function Search() {
     { label: "Nutricionista" },
     { label: "Entrenador Personalizado" },
   ];
+
+  
 
   const mockDoctores = [
     {
@@ -101,6 +105,9 @@ export default function Search() {
   return (
     <div>
       <Paper elevation={3} sx={{ mb: 3, p: 1 }}>
+        <Typography variant="h6" gutterBottom>
+        Filtre la búsqueda de un profesional según:
+        </Typography>
         <Stack direction="row" spacing={5}>
           <Autocomplete
             multiple
@@ -110,27 +117,49 @@ export default function Search() {
             filterSelectedOptions
             margin="normal"
             required
-            sx={{ width: 350 }}
+            sx={{ width: 180 }}
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Seleccione la Profesión del Especialista"
+                label="Especialidad"
               />
             )}
           />
-          <Autocomplete
+
+            <Autocomplete
             multiple
             disablePortal
             id="deporteSeleccionado"
-            options={dolores}
+            options={deportes}
             filterSelectedOptions
             margin="normal"
             required
-            sx={{ width: 350 }}
+            sx={{ width: 180 }}
             renderInput={(params) => (
-              <TextField {...params} label="Seleccione su Zona de dolor" />
+              <TextField {...params} label="Deporte" />
             )}
           />
+            <Autocomplete
+            multiple
+            disablePortal
+            id="deporteSeleccionado"
+            options={miembro}
+            filterSelectedOptions
+            margin="normal"
+            required
+            sx={{ width: 180 }}
+            renderInput={(params) => (
+              <TextField {...params} label="Miembro a tratar" />
+            )}
+          />
+            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">Atiende</FormLabel>
+            <FormGroup row={true}>
+              <FormControlLabel control={<Checkbox />} label="Obra social" />
+              <FormControlLabel control={<Checkbox />} label="Particular" />
+            </FormGroup>
+          </FormControl>
+
           <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
             <FormLabel component="legend">Localidad</FormLabel>
             <FormGroup row={true}>
@@ -143,6 +172,7 @@ export default function Search() {
           </Button>
         </Stack>
       </Paper>
+
       <Container>
         <Grid container>
           {resultsList.map((singleResult, index) => (

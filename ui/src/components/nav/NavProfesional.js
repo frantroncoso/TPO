@@ -1,9 +1,8 @@
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Button, Link, Toolbar, Box, InputBase, Typography } from "@mui/material";
-import { BoltRounded } from "@mui/icons-material";
 
-export default function Nav() {
+export default function NavProfesional() {
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -68,7 +67,7 @@ export default function Nav() {
             fontSize= '20px'
             fontWeight={500}
           >
-            Buscar un profesional
+            Seguimientos
           </Link>
           <Link
             color="text.primary"
@@ -77,10 +76,8 @@ export default function Nav() {
             fontSize= '20px'
             fontWeight={500}
           >
-            Pregunta al experto
+            Preguntas
           </Link>
-
-
         </Box>
         <Link
             color="text.primary"
@@ -90,8 +87,7 @@ export default function Nav() {
             fontWeight={500}
           >
             Mi perfil
-          </Link>        
-
+          </Link>         
         <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
           Cerrar sesion
         </Button>
