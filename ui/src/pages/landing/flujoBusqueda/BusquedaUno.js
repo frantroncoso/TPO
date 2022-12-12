@@ -1,7 +1,39 @@
 import * as React from "react";
-import { Typography, Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
+import { Typography, Button, Container, Stack, Paper, Divider, Grid, Box } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import CircularProgress from '@mui/material/CircularProgress';
+
 export default function BusquedaUno() {
+
+
+  const volver = () => {
+    window.history.back();
+  };
+
+  function CircularProgressWithLabel(props) {
+    return (
+      <Box sx={{ position: 'relative', display: 'inline-flex', marginLeft: "20px", marginTop: "155px" }}>
+
+        <CircularProgress sx={{ color: "#25be8b" }} variant="determinate" {...props} />
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography variant="caption" component="div" color="text.secondary">
+            {`${Math.round(props.value)}%`}
+          </Typography>
+        </Box>
+      </Box>
+    );
+  }
 
 
   const BootstrapButton = styled(Button)({
@@ -49,6 +81,9 @@ export default function BusquedaUno() {
   return (
     <div>
       <Container>
+        <BootstrapButton variant="contained" disableRipple sx={{height:"10px", width:"100px", marginTop:"10px"}} onClick={volver}>
+          Regresar
+        </BootstrapButton>
         <Typography variant="h2" gutterBottom>
           Contanos que necesitás y te ayudamos a buscar al profesional adecuado
         </Typography>
@@ -57,7 +92,7 @@ export default function BusquedaUno() {
       <Grid
         container
         component="main"
-        /* spacing={2} */ sx={{ height: "100%", width: "100%" }}
+        sx={{ height: "100%", width: "100%" }}
       >
 
         <Grid
@@ -65,6 +100,7 @@ export default function BusquedaUno() {
           width="73px"
           height="550px"
         >
+          <CircularProgressWithLabel value={25} />
         </Grid>
         <Grid
           item

@@ -1,8 +1,39 @@
 import * as React from "react";
-import { Typography, Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
+import { Typography, Button, Container, Stack, Paper, Divider, Grid,Box } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import CircularProgress from '@mui/material/CircularProgress';
+
+
 export default function BusquedaDos() {
 
+    const volver = () => {
+        window.history.back();
+      };
+
+    function CircularProgressWithLabel(props) {
+        return (
+          <Box sx={{ position: 'relative', display: 'inline-flex', marginLeft:"20px", marginTop:"225px"}}>
+            
+            <CircularProgress sx={{color:"#25be8b"}} variant="determinate" {...props} />
+            <Box
+              sx={{
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography variant="caption" component="div" color="text.secondary">
+                {`${Math.round(props.value)}%`}
+              </Typography>
+            </Box>
+          </Box>
+        );
+      }
 
     const BootstrapButton = styled(Button)({
         width: "650px",
@@ -49,6 +80,9 @@ export default function BusquedaDos() {
     return (
         <div>
             <Container>
+            <BootstrapButton variant="contained" disableRipple sx={{height:"10px", width:"100px", marginTop:"10px"}} onClick={volver}>
+          Regresar
+        </BootstrapButton>
                 <Typography variant="h2" gutterBottom>
                     ¿Ya te atendiste con un especialista?
                 </Typography>
@@ -64,6 +98,7 @@ export default function BusquedaDos() {
           width="73px"
           height="550px"
         >
+             <CircularProgressWithLabel value={50} />
         </Grid>
                 <Grid
                     item //Checkbox especialidades
@@ -74,14 +109,14 @@ export default function BusquedaDos() {
                     justifyContent="flex-end"
                     divider={<Divider orientation="vertical" flexItem />}
                     spacing={2}>
-
-                    <BootstrapButton variant="contained" disableRipple
+                    
+                    <BootstrapButton variant="contained" disableRipple 
                         href="/tres">
                         Si
                     </BootstrapButton>
 
-                    <BootstrapButton variant="contained" disableRipple
-                        href="/cuatro">
+                    <BootstrapButton variant="contained" disableRipple 
+                        href="/ocho">
                         No
                     </BootstrapButton>
 
