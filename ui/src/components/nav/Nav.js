@@ -72,7 +72,7 @@ export default function Nav() {
           </Link>
           <Link
             color="text.primary"
-            href="/sports"
+            href="/pregunta"
             sx={{ my: 1, mx: 1.5,  }}
             fontSize= '20px'
             fontWeight={500}

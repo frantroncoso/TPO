@@ -9,7 +9,7 @@ import NavProfesional from "./components/nav/NavProfesional";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/footer/Footer";
-import Search from "./pages/Search/search";
+import Search from "./pages/search/search";
 import Profile from "./pages/profile/profile";
 
 import BusquedaUno from "./pages/landing/flujoBusqueda/BusquedaUno";
@@ -20,6 +20,9 @@ import BusquedaSeis from "./pages/landing/flujoBusqueda/BusquedaSeis";
 import BusquedaSiete from "./pages/landing/flujoBusqueda/BusquedaSiete";
 import BusquedaOcho from "./pages/landing/flujoBusqueda/BusquedaOcho";
 import BusquedaNueve from "./pages/landing/flujoBusqueda/BusquedaNueve";
+import PreguntaExperto from "./pages/preguntaExperto/PreguntaExperto";
+
+
 import Nosotros from "./components/nosotros/Nosotros";
 import TerminosyCon from "./components/ter&con/TerminosyCon";
 import PoliticasPriv from "./components/privacidad/PoliticasPriv";
@@ -64,6 +67,8 @@ export default function App() {
             <Route path="/contacto" element={<Contactanos />} />
             <Route path="/prevencion" element={<Prevencion />} />
             <Route path="/deportes" element={<Deportes />} />
+            <Route path="/Pregunta" element={<PreguntaExperto/>} />
+
           </Routes>
         </Router>
       </ThemeProvider>
