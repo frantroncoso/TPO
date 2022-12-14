@@ -61,7 +61,7 @@ export default function Search() {
       localidad: "CABA",
       calificacion: 5,
       address: "Avenida Callao 875 2d, Capital Federal",
-      avatar: "img/prof1.png",
+      avatar: "img/doc3.webp",
     },
     {
       nombre: "Dr. Eliseo Firman",
@@ -70,7 +70,7 @@ export default function Search() {
       localidad: "CABA",
       calificacion: 3,
       address: "Av Libertador 4992",
-      avatar: "img/prof2.png",
+      avatar: "img/doc2.webp",
     },
     {
       nombre: "Dr. Gustavo Gómez Rodríguez",
@@ -79,7 +79,7 @@ export default function Search() {
       localidad: "CABA",
       calificacion: 2,
       address: "Juramento 2089, 5° piso Of. 505",
-      avatar: "img/prof3.png",
+      avatar: "img/doc1.webp",
     },
     {
       nombre: "Dr. Nicolas Irigoitia",
@@ -88,7 +88,17 @@ export default function Search() {
       localidad: "CABA",
       calificacion: 4,
       address: "Marcelo T de Alvear 1719 3°Piso",
-      avatar: "img/prof4.png",
+      avatar: "img/doc.webp",
+    },
+    {
+      nombre: "Rossi - Centro de atención",
+      especialidad: "Ir a la pagina del centro",
+      deporte: "Click aquí",
+      localidad: "CABA - GBA",
+      calificacion: 4,
+      address: "Marcelo T de Alvear 1719 3°Piso",
+      avatar: "img/rossi.webp",
+      link: "https://www.cdrossi.com/"
     },
   ];
 
@@ -189,15 +199,17 @@ export default function Search() {
                   avatar={
                     <Avatar
                       alt={singleResult.nombre}
-                      src={singleResult.avatar}
+                      src={singleResult.avatar} 
+                      sx={{ width: 80, height: 80 }}
                     />
                   }
                   title={singleResult.nombre}
                   subheader={
                     <div>
-                      <Typography variant="body2" color="text.secondary">
-                        {`${singleResult.especialidad} (${singleResult.deporte})`}
-                      </Typography>
+                     <a href={`${singleResult.link}`}>
+                         {`${singleResult.especialidad} (${singleResult.deporte})`}
+                      </a>
+                      
                       <Typography variant="body2" color="text.secondary">
                         {[...Array(singleResult.calificacion)].map((e, i) => (
                           <StarIcon fontSize="small" key={`${index}-${i}`} />

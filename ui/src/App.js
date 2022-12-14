@@ -9,7 +9,7 @@ import NavProfesional from "./components/nav/NavProfesional";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/footer/Footer";
-import Search from "./pages/search/search";
+import Search from "./pages/Search/search";
 import Profile from "./pages/profile/profile";
 
 import BusquedaUno from "./pages/landing/flujoBusqueda/BusquedaUno";
