@@ -313,7 +313,7 @@ export default function BusquedaOcho() {
             divider={<Divider orientation="vertical" flexItem />}
             spacing={1}>
             <div className="imagen">
-              <img id="imagen" src="img/pag8.jpg" width="450" height="550 "></img>
+              <img id="imagen" src="img/instruc2.png" width="450" height="550 "></img>
             </div>
           </Stack>
 
@@ -323,6 +323,7 @@ export default function BusquedaOcho() {
           <p></p>
 
           <BootstrapButton variant="contained" disableRipple sx={{ width: "255px", marginLeft: "100px" }}
+          href="/search"
           >
             Siguiente
           </BootstrapButton>

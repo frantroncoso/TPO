@@ -64,7 +64,7 @@ export default function Nav() {
         <Box sx={{ flexGrow: 1 }}>
          <Link
             color="text.primary"
-            href="/uno"
+            href="/search"
             sx={{ my: 1, mx: 1.5 }}
             fontSize= '20px'
             fontWeight={500}

@@ -21,6 +21,7 @@ import BusquedaSiete from "./pages/landing/flujoBusqueda/BusquedaSiete";
 import BusquedaOcho from "./pages/landing/flujoBusqueda/BusquedaOcho";
 import BusquedaNueve from "./pages/landing/flujoBusqueda/BusquedaNueve";
 import PreguntaExperto from "./pages/preguntaExperto/PreguntaExperto";
+import CartaMedico from "./pages/cartaMedico/CartaMedico";
 
 
 import Nosotros from "./components/nosotros/Nosotros";
@@ -68,6 +69,7 @@ export default function App() {
             <Route path="/prevencion" element={<Prevencion />} />
             <Route path="/deportes" element={<Deportes />} />
             <Route path="/Pregunta" element={<PreguntaExperto/>} />
+            <Route path="/CartaMedico" element={<CartaMedico/>} />
 
           </Routes>
         </Router>
