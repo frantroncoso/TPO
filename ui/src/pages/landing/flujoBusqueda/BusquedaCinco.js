@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Typography,Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 export default function BusquedaCinco() {
 
 

@@ -1,8 +1,13 @@
 import * as React from "react";
 import { Typography, Button, Container, Stack, Paper, Divider, Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 export default function BusquedaNueve() {
 
+  const volver = () => {
+    window.history.back();
+  };
 
   const BootstrapButton = styled(Button)({
     width:"650px",
@@ -49,8 +54,11 @@ export default function BusquedaNueve() {
   return (
     <div>
       <Container>
+      <BootstrapButton variant="contained" disableRipple sx={{height:"10px", width:"100px", marginTop:"10px"}} onClick={volver}>
+          <ArrowBackIcon/>
+        </BootstrapButton>
         <Typography variant="h2" gutterBottom>
-          ¿Que zona?
+          ¿Qué zona?
         </Typography>
       </Container>
       <Grid

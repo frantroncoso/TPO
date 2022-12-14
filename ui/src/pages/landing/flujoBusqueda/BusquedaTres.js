@@ -5,6 +5,7 @@ import {
 } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export default function BusquedaTres() {
 
 
@@ -83,7 +84,7 @@ export default function BusquedaTres() {
     <div>
       <Container>
       <BootstrapButton variant="contained" disableRipple sx={{height:"10px", width:"100px", marginTop:"10px"}} onClick={volver}>
-          Regresar
+      <ArrowBackIcon/>
         </BootstrapButton>
         <Typography variant="h2" gutterBottom>
           ¿Cual es la razon de tu busqueda?
