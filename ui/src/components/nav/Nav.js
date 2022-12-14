@@ -93,8 +93,8 @@ export default function Nav() {
             Mi perfil
           </Link>        
 
-        <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-          Cerrar sesion
+        <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5, borderColor:"black", color:"black", '&:hover':{color: "black", borderColor:"black"},}}>
+          Cerrar sesión
         </Button>
       </Toolbar>
     </AppBar>

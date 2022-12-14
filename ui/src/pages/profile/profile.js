@@ -22,6 +22,7 @@ import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CreateIcon from '@mui/icons-material/Create';
 import IconButton from "@mui/material/IconButton";
+import Divider from "@mui/material/Divider";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -39,12 +40,13 @@ export default function Profile() {
 
   return (
     <div>
-      <Paper elevation={3} sx={{pt:3}}>
+      <Paper elevation={3} sx={{pt:1}}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
           variant="fullWidth"
+          sx={{textColor:"#2fc4b2"}}
         >
           <Tab label="Seguimiento" {...SetupIndex(0)}/>
           <Tab label="Proximos Turnos" {...SetupIndex(1)} />
@@ -59,19 +61,22 @@ export default function Profile() {
         </TabPanel>
       </Box>
 
-      <Grid container xs={12} sx={{marginTop: 5, height:"300px", justifyContent:"center"}} >
-        <Grid container xs={10} sx={{backgroundColor:"white", marginBottom:2, marginTop:2,borderColor:"black" , borderRadius:"7px"}}>
+      <Grid container xs={12} sx={{marginTop: 3, height:"300px", justifyContent:"center"}} >
+        <Grid container xs={10} sx={{backgroundColor:"white", marginBottom:2, borderColor:"black", border: "1px solid grey", borderRadius:"7px"}}>
           <Grid container xs={3} justifyContent={"space-evenly"} alignItems={"center"} direction={"column"} >
-            <Avatar src="/img/foto_perfil.jpg" sx={{ width: 156, height: 156 }}/>
+            <Avatar src="/img/futbol1.jpg" sx={{ width: 156, height: 156 }}/>
             <Button variant={"contained"} sx={{backgroundColor:"#2fc4b2", '&:hover':{backgroundColor: "#2fc4a1",},}}>Cambiar Foto de Perfil</Button>
           </Grid>
-          <Grid container xs={8} direction={"column"} >
+          <Grid container marginTop={1} marginBottom={1}>
+            <Divider orientation="vertical" variant="middle" flexItem />
+          </Grid>
+          <Grid container xs={7.5} direction={"column"} >
             <Grid container xs={12} margin={3} alignItems={"flex-end"}>
               <Grid item marginRight={18}>
-                <Typography variant="h4">Maximiliano Mesa</Typography>
+                <Typography variant="h4">Pedro Molier</Typography>
               </Grid>
               <Grid item height={"26px"}>
-                <Typography variant="h7" sx={{ display: "flex", alignItems: "center" }}><CalendarMonthIcon sx={{fontSize:18}}/>26 Años.</Typography>
+                <Typography variant="h7" sx={{ display: "flex", alignItems: "center" }}><CalendarMonthIcon sx={{fontSize:18}}/>22 Años.</Typography>
               </Grid>
             </Grid>
             <Grid container xs={12} sx={{display:"flex", direction:"row"}}>
@@ -100,7 +105,7 @@ export default function Profile() {
             <Grid container xs={6} marginLeft={3} marginTop={2}>
               <Grid container>
                 <Grid item>
-                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><LocationOnIcon sx={{fontSize:18}}/>Dirección: Av. de los Incas 2992; C.A.B.A; Argentina.</Typography>
+                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><LocationOnIcon sx={{fontSize:18}}/>Dirección: Av. de los Incas 4586; C.A.B.A; Argentina.</Typography>
                 </Grid>
                 <Grid item marginTop={2}>
                   <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><FavoriteIcon sx={{fontSize:18}}/>Género: Masculino.</Typography>

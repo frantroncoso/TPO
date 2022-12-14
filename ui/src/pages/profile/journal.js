@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import {
+  Button,
+  DialogContent,
   Typography,
 } from "@mui/material";
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -14,21 +16,42 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from '@mui/material/Slide';
 import DialogContentText from "@mui/material/DialogContentText";
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import ListItemText from '@mui/material/ListItemText';
+import Select from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+const names1 = [
+  'Lic. Alberto Mancini',
+];
 
+const names2 = [
+  'Dr. Juan Ricciardi',
+];
 
 export default function Journal() {
-  const [open1, setOpen1] = React.useState(false);
+  const [personName, setPersonName] = React.useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
   const [open2, setOpen2] = React.useState(false);
   const [open3, setOpen3] = React.useState(false);
   
-  const handleClickOpen1 = () => {
-    setOpen1(true);
-  };
   
   const handleClickOpen2 = () => {
     setOpen2(true);
@@ -36,10 +59,6 @@ export default function Journal() {
 
   const handleClickOpen3 = () => {
     setOpen3(true);
-  };
-
-  const handleClose1 = () => {
-    setOpen1(false);
   };
 
   const handleClose2 = () => {
@@ -62,60 +81,7 @@ export default function Journal() {
             sx={{backgroundColor:"#e0e0e0"}}
           >
             <Typography variant="h5" sx={{ width: '45%', flexShrink: 0 }}>
-              Plan de Alimentación
-            </Typography>
-            <Typography sx={{ width: '33%', color: 'text.secondary' }}>
-              Lic. Mariana Sanchez
-            </Typography>
-            <Typography sx={{ width: '4.4%', color: 'text.secondary' }}>
-              Estado:
-            </Typography>
-            <Typography sx={{width: '11.4%', color: 'red' }}>
-              En Proceso
-            </Typography>
-            <Grid container alignItems={"flex-start"}>
-              <IconButton aria-label="delete" onClick={handleClickOpen1}>
-                <ReplyIcon fontSize="medium"/>
-              </IconButton>
-              <Dialog
-                open={open1}
-                onClose={handleClose1}
-                TransitionComponent={Transition}
-                keepMounted
-              >
-                <DialogTitle>Compartir el Seguimiento con Medico/s:</DialogTitle>
-                  <DialogContentText>
-                    *Los medicos que se seleccione van a ver toda la informacion del tratamiento.
-                  </DialogContentText>
-              </Dialog>
-            </Grid>
-          </AccordionSummary>
-          <AccordionDetails sx={{backgroundColor: "#eeeeee"}}>
-            <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
-              Sesión 1:
-            </Typography>
-            <Typography variant={"subtitle1"}>
-              El paciente se presentó con el objetivo de disminuir su grasa corporal, ganando masa muscular, siguiendo una rutina de alimentación la cual va a complementar con entrenamiento en un gimnasio.
-            </Typography>
-            <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
-              Sesión 2:
-            </Typography>
-            <Typography>
-              El paciente presentó un aumento de masa muscular y una reducción de grasa corporal, presenta dificultades para seguir extrictamente la rutina alimentaria y cumple con su entrenamiento. Se le indicó seguir con la dieta.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        </Grid>
-        <Grid item xs={12}>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-            sx={{backgroundColor:"#e0e0e0"}}
-          >
-            <Typography variant="h5" sx={{ width: '45%', flexShrink: 0 }}>
-              Traumatología - Miembro Hombros
+              Traumatología - Miembro Isquiotibial
             </Typography>
             <Typography sx={{ width: '33%', color: 'text.secondary' }}>
               Dr. Juan Ricciardi
@@ -123,7 +89,7 @@ export default function Journal() {
             <Typography sx={{ width: '4.4%', color: 'text.secondary' }}>
               Estado:
             </Typography>
-            <Typography sx={{width: '11.4%', color: 'green' }}>
+            <Typography sx={{width: '11.4%', color: 'red' }}>
               Finalizado
             </Typography>
             <Grid container alignItems={"flex-start"}>
@@ -137,18 +103,45 @@ export default function Journal() {
                 keepMounted
               >
                 <DialogTitle>Compartir el Seguimiento con Medico/s:</DialogTitle>
-                  <DialogContentText>
-                    *Los medicos que se seleccione van a ver toda la informacion del tratamiento.
-                  </DialogContentText>
+                  <DialogContent>
+                    <DialogContentText>
+                      *Los medicos que se seleccione van a ver toda la informacion del tratamiento.
+                    </DialogContentText>
+                    <Grid container xs={12} justifyContent={"center"} direction={"column"} alignItems={"center"}>
+                      <Grid container xs={6}>
+                      <FormControl sx={{ m: 1, width: 200 }}>
+                      <InputLabel id="demo-multiple-checkbox-label">Seleccione:</InputLabel>
+                        <Select
+                          multiple
+                          value={personName}
+                          onChange={handleChange}
+                          input={<OutlinedInput label="Seleccione:" />}
+                          renderValue={(selected) => selected.join(', ')}
+                          fullWidth
+                        >
+                          {names1.map((name) => (
+                            <MenuItem key={name} value={name}>
+                              <Checkbox checked={personName.indexOf(name) > -1} />
+                              <ListItemText primary={name} />
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        </FormControl>
+                      </Grid>
+                      <Grid container xs={6}>
+                        <Button onClick={handleClose2}>Guardar</Button>
+                      </Grid>
+                    </Grid>
+                  </DialogContent>
               </Dialog>
             </Grid>
           </AccordionSummary>
           <AccordionDetails sx={{backgroundColor: "#eeeeee"}}>
             <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
-              Sesión 1:
+              Sesión 1: 30/11/2022
             </Typography>
             <Typography variant={"subtitle1"}>
-            
+              El paciente se presento con un desgarro de tipo 2 en el Miembro Isquiotibial Izquierdo. Se recomienda reposo colocando el musculo en posiciones de relajación, aplicación de hielo para la reducción de inflamación del musculo y sesiones de Kinesiología para la recuperación apropiada del musculo.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -171,7 +164,7 @@ export default function Journal() {
             <Typography sx={{ width: '4.4%', color: 'text.secondary' }}>
               Estado:
             </Typography>
-            <Typography sx={{width: '11.4%', color: 'red' }}>
+            <Typography sx={{width: '11.4%', color: 'green' }}>
               En Proceso
             </Typography>
             <Grid container alignItems={"flex-start"}>
@@ -185,18 +178,51 @@ export default function Journal() {
                 keepMounted
               >
                 <DialogTitle>Compartir el Seguimiento con Medico/s:</DialogTitle>
-                  <DialogContentText>
-                    *Los medicos que se seleccione van a ver toda la informacion del tratamiento.
-                  </DialogContentText>
+                <DialogContent>
+                    <DialogContentText>
+                      *Los medicos que se seleccione van a ver toda la informacion del tratamiento.
+                    </DialogContentText>
+                    <Grid container xs={12} justifyContent={"center"} direction={"column"} alignItems={"center"}>
+                      <Grid container xs={6}>
+                      <FormControl sx={{ m: 1, width: 200 }}>
+                      <InputLabel id="demo-multiple-checkbox-label">Seleccione:</InputLabel>
+                        <Select
+                          multiple
+                          value={personName}
+                          onChange={handleChange}
+                          input={<OutlinedInput label="Seleccione:" />}
+                          renderValue={(selected) => selected.join(', ')}
+                          fullWidth
+                        >
+                          {names2.map((name) => (
+                            <MenuItem key={name} value={name}>
+                              <Checkbox checked={personName.indexOf(name) > -1} />
+                              <ListItemText primary={name} />
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        </FormControl>
+                      </Grid>
+                      <Grid container xs={6}>
+                        <Button onClick={handleClose2}>Guardar</Button>
+                      </Grid>
+                    </Grid>
+                  </DialogContent>
               </Dialog>
             </Grid>
           </AccordionSummary>
           <AccordionDetails sx={{backgroundColor:"#eeeeee"}}>
             <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
-              Sesión 1:
+              Sesión 1: 05/12/2022
             </Typography>
             <Typography variant={"subtitle1"}>
-            
+              El paciente se presento a la sesión con un desgarro de tipo 2 en el miembro Isquiotibial Izquierdo. Concentración de liquido linfático en el lugar del desgarro. Se realizaron ejercicios de recuperación y masajes drenantes para la estimulación del musculo y tratar dolor. Se recomendaron cuatro(4) sesiones de Kinesiología para la recuperación correcta.
+            </Typography>
+            <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
+              Sesión 2: 12/12/2022
+            </Typography>
+            <Typography variant={"subtitle1"}>
+              Se realizaron ejercicios de recuperación y masajes para la estimulación del musculo y tratar dolor. El musculo se encuentra en una recuperación optima, se observa una desinflamación acorde a los ejercicios realizados.
             </Typography>
           </AccordionDetails>
         </Accordion>
