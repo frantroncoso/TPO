@@ -2,6 +2,7 @@ import * as React from "react";
 import { Typography, Button, Container, Stack, Paper, Divider, Grid, Input,Box } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function BusquedaOcho() {
 
@@ -197,7 +198,7 @@ export default function BusquedaOcho() {
     <div>
       <Container>
       <BootstrapButton variant="contained" disableRipple sx={{height:"33px", width:"100px", marginTop:"10px"}} onClick={volver}>
-          Regresar
+      <ArrowBackIcon/>
         </BootstrapButton>
         <Typography variant="h2" gutterBottom>
           ¿En que miembro se encuentra tu dolor?
