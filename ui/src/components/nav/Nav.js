@@ -54,12 +54,13 @@ export default function Nav() {
       sx={{backgroundColor:"#2fc4b2" }}
     >
       <Toolbar disableGutters>
+        <Button href="/" sx={{"&hover":{backgroundColor: "#2fc4b2"}}}>
         <img
-          href="/"
           src="img/logo01.svg"
           alt="logo"
           style={{ marginLeft: "15px", maxHeight: "90px", maxWeight: "50px" }}
         />
+        </Button>
         <Box sx={{ flexGrow: 1 }}>
          <Link
             color="text.primary"
@@ -84,7 +85,7 @@ export default function Nav() {
         </Box>
         <Link
             color="text.primary"
-            href="/sports"
+            href="/profile"
             sx={{ my: 1, mx: 1.5,  }}
             fontSize= '20px'
             fontWeight={500}

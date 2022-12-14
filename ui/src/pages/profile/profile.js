@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Unstable_Grid2";
 import Avatar from "@mui/material/Avatar";
 import { Edit } from "@mui/icons-material";
 import Tabs from "@mui/material/Tabs";
@@ -13,6 +13,15 @@ import Journal from "./journal";
 import Turns from "./turns";
 import { TabPanel, SetupIndex } from "../../components/tabPanel/TabPanel";
 import { Stack } from "@mui/system";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import SportsIcon from '@mui/icons-material/Sports';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CreateIcon from '@mui/icons-material/Create';
+import IconButton from "@mui/material/IconButton";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -30,91 +39,14 @@ export default function Profile() {
 
   return (
     <div>
-      <Paper elevation={3} sx={{ m: 5, pt: 1 }}>
-        <Stack direction="row" sx={{ mx: 3 }} spacing={2} alignItems="center">
-          {!user ? (
-            <Skeleton variant="circular" />
-          ) : (
-            <Avatar
-              alt="Remy Sharp"
-              src={user.picture.thumbnail}
-              sx={{ width: 75, height: 75 }}
-            />
-          )}
-          <Grid container>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography
-                  component="h1"
-                  variant="subtitle1"
-                  color="inherit"
-                  gutterBottom
-                >
-                  Nombre: {user.name.first} {user.name.last}
-                </Typography>
-              )}
-            </Grid>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography variant="subtitle1" color="inherit" paragraph>
-                  Fecha de nacimiento: {"19/11/1995"}
-                </Typography>
-              )}
-            </Grid>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography variant="subtitle1" color="inherit" paragraph>
-                  DNI: {"38991915"}
-                </Typography>
-              )}
-            </Grid>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography
-                  component="h1"
-                  variant="subtitle1"
-                  color="inherit"
-                  gutterBottom
-                >
-                  Deporte: {"Futbol"}
-                </Typography>
-              )}
-            </Grid>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography variant="subtitle1" color="inherit" paragraph>
-                  Peso: {75} kg.
-                </Typography>
-              )}
-            </Grid>
-            <Grid item md={6}>
-              {!user ? (
-                <Skeleton />
-              ) : (
-                <Typography variant="subtitle1" color="inherit" paragraph>
-                  Altura: {170} cm.
-                </Typography>
-              )}
-            </Grid>
-          </Grid>
-          <Edit sx={{ mb: "auto" }} />
-        </Stack>
+      <Paper elevation={3} sx={{pt:3}}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          variant="fullWidth"
         >
-          <Tab label="Seguimiento" {...SetupIndex(0)} />
+          <Tab label="Seguimiento" {...SetupIndex(0)}/>
           <Tab label="Proximos Turnos" {...SetupIndex(1)} />
         </Tabs>
       </Paper>
@@ -126,6 +58,62 @@ export default function Profile() {
           <Turns />
         </TabPanel>
       </Box>
+
+      <Grid container xs={12} sx={{marginTop: 5, height:"300px", justifyContent:"center"}} >
+        <Grid container xs={10} sx={{backgroundColor:"white", marginBottom:2, marginTop:2,borderColor:"black" , borderRadius:"7px"}}>
+          <Grid container xs={3} justifyContent={"space-evenly"} alignItems={"center"} direction={"column"} >
+            <Avatar src="/img/foto_perfil.jpg" sx={{ width: 156, height: 156 }}/>
+            <Button variant={"contained"} sx={{backgroundColor:"#2fc4b2", '&:hover':{backgroundColor: "#2fc4a1",},}}>Cambiar Foto de Perfil</Button>
+          </Grid>
+          <Grid container xs={8} direction={"column"} >
+            <Grid container xs={12} margin={3} alignItems={"flex-end"}>
+              <Grid item marginRight={18}>
+                <Typography variant="h4">Maximiliano Mesa</Typography>
+              </Grid>
+              <Grid item height={"26px"}>
+                <Typography variant="h7" sx={{ display: "flex", alignItems: "center" }}><CalendarMonthIcon sx={{fontSize:18}}/>26 Años.</Typography>
+              </Grid>
+            </Grid>
+            <Grid container xs={12} sx={{display:"flex", direction:"row"}}>
+            <Grid container xs={7} marginLeft={3} marginTop={2}>
+              <Grid container xs={12} sx={{ display: "flex", alignItems: "center" }}>
+                <Grid item>
+                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><MedicalServicesIcon/>Antecedentes Médicos: Sin Antecedentes Medicos Cargados.</Typography>
+                </Grid>
+                <Grid item marginLeft={0.2}>
+                  <Link>
+                    <Typography variant="body2">Link</Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+              <Grid container xs={12} marginTop={2} sx={{ display: "flex", alignItems: "center" }}>
+                <Grid item>
+                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><SportsIcon/>Apto Físico: Actualizado 15/08/2022.</Typography>
+                </Grid>
+                <Grid item marginLeft={0.2}>
+                  <Link>
+                    <Typography variant="body2">Actualizar</Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container xs={6} marginLeft={3} marginTop={2}>
+              <Grid container>
+                <Grid item>
+                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><LocationOnIcon sx={{fontSize:18}}/>Dirección: Av. de los Incas 2992; C.A.B.A; Argentina.</Typography>
+                </Grid>
+                <Grid item marginTop={2}>
+                  <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}><FavoriteIcon sx={{fontSize:18}}/>Género: Masculino.</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+            </Grid>
+          </Grid>
+          <Grid container xs={1} justifyContent={"space-evenly"} alignItems={"center"} direction={"column"} >
+            <IconButton variant={"contained"} sx={{backgroundColor:"#eeeeee", '&:hover':{backgroundColor: "#bdbdbd",},}}><CreateIcon/></IconButton>
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 }
