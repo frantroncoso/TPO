@@ -3,6 +3,13 @@ import { Typography,Button, Container, Stack, Paper, Divider, Grid,Box } from "@
 import { styled } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import SportsFootballIcon from '@mui/icons-material/SportsFootball';
+import SportsTennisIcon from '@mui/icons-material/SportsTennis';
+import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import SportsVolleyballIcon from '@mui/icons-material/SportsVolleyball';
+import SportsHockeyIcon from '@mui/icons-material/SportsHockey';
+import PoolIcon from '@mui/icons-material/Pool';
 
 export default function BusquedaSiete() {
 
@@ -113,37 +120,37 @@ export default function BusquedaSiete() {
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-          Futbol 
+          <SportsSoccerIcon/>Futbol 
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Tenis
+          <SportsTennisIcon/>Tenis
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Rugby
+          <SportsFootballIcon/>Rugby
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Basquet
+          <SportsBasketballIcon/>Basquet
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Voley
+          <SportsVolleyballIcon/>Voley
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Hockey
+          <SportsHockeyIcon/>Hockey
         </BootstrapButton>
 
         <BootstrapButton variant="contained" disableRipple
           href="/cinco">
-            Natacion
+          <PoolIcon/>Natacion
         </BootstrapButton>
 
       </Stack>
