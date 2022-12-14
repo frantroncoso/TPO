@@ -24,34 +24,21 @@ export default function Turns() {
   const [value, setValue] = useState(0);
   const [resultsList, setresultsList] = useState([
     {
-      tratamiento: "Plan de Alimentación",
-      doctor: " Pablo Perez",
-      fecha: "07/12/2022; 16:00 horas",
-      turnoactual: "07/12/2022; 16:00 horas. Str. General Traian Moșoiu, nr. 24, Bran",
+      tratamiento: "Traumatología - Miembro Isquiotibial",
+      doctor: "Dr. Juan Ricciardi",
+      fecha: "No se Encuentra con Ningun Turno Asignado.",
       turno1:
-        "21/11/2022; 16:00 horas.",
-      turno2:
-        "30/10/2022; 16:00 horas",
-      },
-    {
-      tratamiento: "Traumatología - Zona Hombros",
-      doctor: " Juan Perez",
-      fecha: "08/12/2022; 14:45 horas",
-      turnoactual: "08/12/2022; 14:45 horas. Avenida Siempre Viva 742",
-      turno1:
-        "18/11/2022; 15:30 horas.",
-      turno2:
-        "30/10/2022; 09:30 horas",
+        "30/11/2022; 15:30 horas.",
       },
     {
       tratamiento: "Kinesiología",
-      doctor: " Alberto Perez",
-      fecha: "22/12/2022; 11:00 horas",
-      turnoactual: "22/12/2022; 11:00 horas. 221B Baker Street",
+      doctor: "Lic. Alberto Mancini",
+      fecha: "17/12/2022; 11:00 horas.",
+      turnoactual: "17/12/2022; 11:00 horas. Centro de Diagnóstico Parque, Campana 3252, C.A.B.A, Argentina.",
       turno1:
-        "05/12/2022; 12:30 horas. ",
+        "12/12/2022; 18:00 horas. Centro de Diagnóstico Parque, Campana 3252, C.A.B.A, Argentina. ",
       turno2:
-        "21/11/2022; 11:30 horas",
+        "05/12/2022; 18:30 horas. Centro de Diagnóstico Parque, Campana 3252, C.A.B.A, Argentina.",
     },
   ]);
 
@@ -71,19 +58,19 @@ export default function Turns() {
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
             id="panel1bh-header"
-            
+            sx={{backgroundColor:"#e0e0e0"}}
           >
-            <Typography variant="h5" sx={{ width: '33%', flexShrink: 0}}>
+            <Typography variant="h5" sx={{ width: '43%', flexShrink: 0}}>
               {singleResult.tratamiento}
             </Typography>
-            <Typography sx={{ width: '33%', color: 'text.secondary' }}>
+            <Typography sx={{ width: '23%', color: 'text.secondary' }}>
               {singleResult.doctor}
             </Typography>
-            <Typography variant={"h5"} sx={{color: '#2fc4b2', fontWeight:"bold" }}>
+            <Typography variant={"h6"} sx={{color: '#2fc4b2', fontWeight:"bold" }}>
               {singleResult.fecha}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{backgroundColor: "#eeeeee"}}>
             <Typography variant={"h5"} sx={{color:"#2fc4b2", fontWeight:"bold"}}>
               Turnos:
               

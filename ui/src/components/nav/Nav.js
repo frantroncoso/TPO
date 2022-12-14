@@ -64,7 +64,7 @@ export default function Nav() {
         <Box sx={{ flexGrow: 1 }}>
          <Link
             color="text.primary"
-            href="/uno"
+            href="/search"
             sx={{ my: 1, mx: 1.5 }}
             fontSize= '20px'
             fontWeight={500}
@@ -93,8 +93,8 @@ export default function Nav() {
             Mi perfil
           </Link>        
 
-        <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-          Cerrar sesion
+        <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5, borderColor:"black", color:"black", '&:hover':{color: "black", borderColor:"black"},}}>
+          Cerrar sesión
         </Button>
       </Toolbar>
     </AppBar>
