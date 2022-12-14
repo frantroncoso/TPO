@@ -318,7 +318,7 @@ export default function BusquedaOcho() {
           </Stack>
 
           <BootstrapButton variant="contained" disableRipple sx={{ width: "255px", marginLeft: "100px" }} onClick={deseleccionar}>
-            Deseleccionar
+            Anular Selección
           </BootstrapButton>
           <p></p>
 

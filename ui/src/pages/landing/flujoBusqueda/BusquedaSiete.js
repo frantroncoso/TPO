@@ -146,11 +146,6 @@ export default function BusquedaSiete() {
             Natacion
         </BootstrapButton>
 
-        <BootstrapButton variant="contained" disableRipple
-          href="/cinco">
-            Otro
-        </BootstrapButton>
-
       </Stack>
       </Grid>
       <Grid
@@ -163,7 +158,7 @@ export default function BusquedaSiete() {
         >
 
       <div className="imagen">
-        <img src="img/pag7.webp" width="782" height="650 "></img>
+        <img src="img/imagenfulbopaint.png" width="782" height="650 "></img>
       </div>
       </Grid>
       </Grid>
